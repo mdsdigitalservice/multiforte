@@ -1,0 +1,49 @@
+{
+  "markdownZipSha256": "c47169560dd6673d5a554764ce049e968ac2736ba4dfe7cabe37d82250acd21a",
+  "documents": [
+    {
+      "document": "elementor_library/elementor-loop-item-2/elementor-loop-item-2.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "elementor_library/elementor-loop-item/elementor-loop-item.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "page/politica-de-privacidade/politica-de-privacidade.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "page/instrucao-normativa/instrucao-normativa.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "page/bio/bio.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "page/teste/teste.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "page/portfolio/portfolio.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "elementor_library/elementor-footer-139/elementor-footer-139.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "elementor_library/elementor-header-19/elementor-header-19.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "elementor_library/kit-padrao/kit-padrao.md",
+      "elementorMatchesXml": true
+    },
+    {
+      "document": "page/home/home.md",
+      "elementorMatchesXml": true
+    }
+  ]
+}

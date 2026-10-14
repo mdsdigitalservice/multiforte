@@ -1,0 +1,11 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { dirname } from 'node:path';
+const root = new URL('../', import.meta.url);
+const manifest = JSON.parse(readFileSync(new URL('assets/documents/catalogo.json', root), 'utf8'));
+const catalog = Buffer.concat(manifest.parts.map(part => readFileSync(new URL(part, root))));
+if (createHash('sha256').update(catalog).digest('hex') !== manifest.sha256) throw new Error('Catálogo incompleto ou corrompido.');
+const target = new URL(manifest.destination, root);
+mkdirSync(dirname(target.pathname), { recursive: true });
+writeFileSync(target, catalog);
+console.log('Catálogo original preparado e SHA-256 validado.');

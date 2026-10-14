@@ -1,8 +1,15 @@
 {
   "source": "https://www.multiforteseguranca.com.br/",
-  "status": "awaiting-source",
+  "status": "imported",
   "reviewed": false,
-  "capturedAt": null,
-  "expectedPaths": [],
-  "notes": "Repository was empty. Original website timed out during access. ZIP includes images only. Do not infer slugs, copy, links, metadata or forms."
+  "capturedAt": "2026-10-14T21:00:31Z",
+  "expectedPaths": [
+    "/",
+    "/portfolio/",
+    "/teste/",
+    "/bio/",
+    "/instrucao-normativa/",
+    "/politica-de-privacidade/"
+  ],
+  "notes": "Public WXR content imported and crosschecked with all 11 Markdown documents. Original site metadata captured live. Pending visual QA and activation of indexing for domain cutover."
 }

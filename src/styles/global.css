@@ -21,3 +21,22 @@
   .button { @apply inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-900; }
   .prose-site { @apply space-y-5 text-base leading-relaxed text-zinc-700 md:text-lg; }
 }
+@layer components {
+  .wordpress-content { @apply space-y-6 text-base leading-relaxed text-zinc-700 md:text-lg; overflow-wrap: anywhere; }
+  .wordpress-content h1, .wordpress-content h2 { @apply mt-12 mb-6 text-3xl font-semibold leading-tight tracking-tight text-ink md:text-4xl; }
+  .wordpress-content > :first-child { @apply mt-0; }
+  .wordpress-content h3 { @apply mt-8 text-2xl font-semibold text-ink; }
+  .wordpress-content a { @apply font-semibold text-brand underline underline-offset-4; }
+  .wordpress-content ul { @apply list-disc space-y-2 pl-6; }
+  .wordpress-content ol { @apply list-decimal space-y-2 pl-6; }
+  .wordpress-content img { @apply mx-auto h-auto max-h-[75vh] w-auto rounded-xl; }
+  .wordpress-content figure { @apply my-8; }
+  .wordpress-content li a { overflow-wrap: anywhere; }
+  .bio-content { @apply text-center; }
+  .bio-content ul { @apply list-none p-0; }
+  .bio-content li a { @apply my-3 block rounded-xl border border-zinc-200 bg-white px-6 py-4 no-underline transition-colors hover:border-brand; }
+  .bio-content svg { @apply hidden; }
+  .footer-copy a { @apply text-zinc-200 underline underline-offset-4; }
+  .service-detail summary::marker { color: #a71924; }
+  .service-detail summary br { display: none; }
+}

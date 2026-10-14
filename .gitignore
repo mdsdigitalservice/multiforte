@@ -5,3 +5,6 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Reassembled byte-for-byte by prebuild from the tracked chunks.
+/public/wp-content/uploads/2024/01/apresentacao_multiforte.pdf

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { navigation, site } from '../data/site';
+import data from '../data/wordpress.json';
+import seo from '../data/seo.json';
+export function getStaticPaths() {
+  return data.pages.filter(page => page.path !== '/').map(page => ({ params: { slug: page.path.replace(/^\/+|\/+$/g, '') }, props: { page } }));
+}
+interface Props { page: typeof data.pages[number] }
+const { page } = Astro.props;
+const metadata = seo[page.path as keyof typeof seo];
+const isBio = page.path === '/bio/';
+---
+<BaseLayout title={metadata?.title ?? page.title} canonicalPath={page.path} image={data.hero.image}>
+  {!isBio && <Header links={navigation} />}
+  <main id="conteudo" class:list={['container-site min-h-[60svh] py-14 md:py-24', isBio && 'max-w-2xl!']}>
+    {isBio && <a href="/" aria-label={site.name} class="mx-auto mb-10 block w-fit rounded-2xl bg-ink p-8"><img src={site.logo} width="300" height="72" alt={site.name} class="w-56" /></a>}
+    <article class:list={['wordpress-content mx-auto max-w-4xl', isBio && 'bio-content']} set:html={page.html} />
+  </main>
+  {!isBio && <Footer />}
+</BaseLayout>

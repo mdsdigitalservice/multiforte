@@ -1,0 +1,26 @@
+{
+  "/": {
+    "title": "Multiforte Segurança – Empresa de segurança patrimonial",
+    "canonical": "https://www.multiforteseguranca.com.br/"
+  },
+  "/portfolio/": {
+    "title": "PORTFÓLIO – Multiforte Segurança",
+    "canonical": "https://www.multiforteseguranca.com.br/portfolio/"
+  },
+  "/teste/": {
+    "title": "teste – Multiforte Segurança",
+    "canonical": "https://www.multiforteseguranca.com.br/teste/"
+  },
+  "/bio/": {
+    "title": "bio – Multiforte Segurança",
+    "canonical": "https://www.multiforteseguranca.com.br/bio/"
+  },
+  "/instrucao-normativa/": {
+    "title": "Instrução Normativa – Multiforte Segurança",
+    "canonical": "https://www.multiforteseguranca.com.br/instrucao-normativa/"
+  },
+  "/politica-de-privacidade/": {
+    "title": "Política de Privacidade – Multiforte Segurança",
+    "canonical": "https://www.multiforteseguranca.com.br/politica-de-privacidade/"
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "source": "multifortesegurana.WordPress.2026-10-14.xml",
+  "sourceSha256": "a07a99a7c1bfed224e49e19cfe38f5198e26c564819990ad711d22c431bf255a",
+  "siteTitle": "Multiforte Segurança",
+  "siteDescription": "Empresa de segurança patrimonial",
+  "exportDate": "Wed, 14 Oct 2026 21:00:31 +0000",
+  "pages": [
+    {
+      "id": "2",
+      "title": "Home",
+      "path": "/",
+      "html": "",
+      "modified": "2025-04-22 21:59:07"
+    },
+    {
+      "id": "922",
+      "title": "PORTFÓLIO",
+      "path": "/portfolio/",
+      "html": "<h1>portfólio </h1>\t\t\n\t\t\t<h2>Confira nossa apresentação completa.</h2>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/wp-content/uploads/2024/01/apresentacao_multiforte.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t<img src=\"/images/imgi_4_catalogo_multiforte-e1706649925907.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\" width=\"696\" height=\"501\">\t\t\t\t\t\t\t\t</a>\n\t\t\t<a href=\"/wp-content/uploads/2024/01/apresentacao_multiforte.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">\n                baixar catálogo\n\t\t\t\t\t</a>",
+      "modified": "2024-01-30 21:43:00"
+    },
+    {
+      "id": "1088",
+      "title": "teste",
+      "path": "/teste/",
+      "html": "<h1>Adicione o texto do seu título aqui</h1>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"/wp-content/uploads/2024/02/Group-1466.png\" alt=\"\" loading=\"lazy\" decoding=\"async\" width=\"454\" height=\"356\">\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>\t\t\n\t\t\t<a href=\"#\">\n\t\t\t\t\t\tClique aqui\n\t\t\t\t\t</a>",
+      "modified": "2024-02-01 23:06:52"
+    },
+    {
+      "id": "1329",
+      "title": "bio",
+      "path": "/bio/",
+      "html": "<h1>Confira nossos principais links</h1>\t\t\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://api.whatsapp.com/send?phone=5565984290110&amp;text=Oi,%20vim%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida.\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAtendimento \n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.instagram.com/multiforteseguranca/\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tinstagram\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/multiforteseguranca\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tfacebook\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.youtube.com/@GrupoMultiForte\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\tyoutube\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/wp-content/uploads/2024/01/apresentacao_multiforte.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\tportfólio\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://maps.app.goo.gl/svHD5vSh6tb5WQ5g9\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tlocalização\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/avalie-nos\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tavalie-nos\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t<p>©Grupo Multiforte 2024. Todos os direitos reservados.</p>\t\t\n\t\t\t<a href=\"https://api.whatsapp.com/send?phone=5565996290909&amp;text=Quero%20fazer%20um%20site%20top!\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t</a>",
+      "modified": "2024-02-28 21:39:59"
+    },
+    {
+      "id": "1594",
+      "title": "Instrução Normativa",
+      "path": "/instrucao-normativa/",
+      "html": "<h1>INSTRUÇÃO NORMATIVA GM/MTE Nº 6, DE 17 DE SETEMBRO DE 2024</h1>\t\t\t\t\n\t\t<p>Sobre a Lei<br>Em 3 de julho de 2023, foi sancionada a Lei nº 14.611, que aborda a igualdade salarial e de critérios remuneratórios entre homens e mulheres no ambiente de trabalho, modificando o artigo 461 da Consolidação das Leis do Trabalho (CLT). Empresas com mais de 100 empregados devem adotar medidas para garantir essa igualdade, incluindo transparência salarial, fiscalização contra discriminação, canais de denúncia, programas de diversidade e inclusão, e apoio à capacitação de mulheres. </p><p>A lei é uma iniciativa do Ministério do Trabalho e Emprego e do Ministério das Mulheres. Para mais informações, consulte a Instrução Normativa do MTE Nº 6, de 17 de setembro de 2024 - DOU - Imprensa Nacional.</p><p>Dispõe sobre a implementação da Lei nº 14.611, de 3 de julho de 2023, que trata sobre a igualdade salarial e de critérios remuneratórios entre mulheres e homens, regulamentada pelo Decreto nº 11.795, de 23 de novembro de 2023, e pela Portaria MTE nº 3.714, de 24 de novembro de 2023.</p><p>Atualizado em 18/09/2024 13h12</p>\t\t\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/legislacao/colegiados-do-trabalho/instrucao-normativa-gm-mte-no-6-de-17-de-setembro-de-2024.pdf/@@download/file\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tINSTRUÇÃO NORMATIVA GM -MTE Nº 6, DE 17 DE SETEMBRO DE 2024.pdf — 3577 KB\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<h2>RELATÓRIO TRANSPARÊNCIA SALARIAL </h2>\t\t\t\t\n\t\t<p>Em conformidade com a <strong>Lei nº 14.611/2023</strong>, reforçamos nosso compromisso com a igualdade salarial entre homens e mulheres.<br>Priorizamos a transparência nas remunerações, garantindo um ambiente justo e livre de discriminação.<br>Nosso compromisso vai além do cumprimento da legislação: buscamos construir um ambiente de trabalho mais justo e igualitário para todos.</p>\t\t\n\t\t\t\t\t<h2>Declaração de Igualdade Salarial e de Critérios Remuneratórios \n2º ciclo de 2026\n</h2>\t\t\t\t\n\t\t\t<figure>\n\t\t\t\t<a href=\"/wp-content/uploads/2026/10/dec-igualdade-15686556000150-2026-2.jpg\"><img src=\"/wp-content/uploads/2026/10/dec-igualdade-15686556000150-2026-2.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\" width=\"1265\" height=\"1790\"></a>\n\t\t\t</figure>\n\t\t<p>Segue relatório em formato PDF no link abaixo:</p>\t\t\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/wp-content/uploads/2026/10/dec-igualdade-15686556000150-2026-2.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tDeclaração de Igualdade Salarial e de Critérios Remuneratórios - 2º ciclo de 2026\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<h2>Relatório de Transparência e Igualdade Salarial de Mulheres e Homens - 1º Semestre 2025\n</h2>\t\t\t\t\n\t\t\t<figure>\n\t\t\t\t<a href=\"/wp-content/uploads/2025/03/Relatorio-Transparencia-Salarial_Multiforte-Seguranca-1.webp\"><img src=\"/wp-content/uploads/2025/03/Relatorio-Transparencia-Salarial_Multiforte-Seguranca-1.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\" width=\"1608\" height=\"1080\"></a>\n\t\t\t</figure>\n\t\t<p>Segue relatório em formato PDF no link abaixo:</p>\t\t\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/wp-content/uploads/2025/04/Relatorio-Transparencia-Salarial_Multiforte-Seguranca.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tRelatório Transparência Salarial 1º SEMESTRE 2025\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t<h2>Relatório de Transparência e Igualdade Salarial de Mulheres e Homens - 2º Semestre 2025\n</h2>\t\t\t\t\n\t\t\t<figure>\n\t\t\t\t<a href=\"/wp-content/uploads/2025/09/Relatorio-Transparencia-Salarial-2-semestre-2025_Multiforte-Seguranca-1.webp\"><img src=\"/wp-content/uploads/2025/09/Relatorio-Transparencia-Salarial-2-semestre-2025_Multiforte-Seguranca-1.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\" width=\"2339\" height=\"1654\"></a>\n\t\t\t</figure>\n\t\t<p>Segue relatório em formato PDF no link abaixo:</p>\t\t\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/wp-content/uploads/2025/09/Relatorio-Transparencia-Salarial-2-semestre-2025_Multiforte-Seguranca.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tRelatório Transparência Salarial 2º semestre 2025\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>",
+      "modified": "2026-10-02 11:35:12"
+    },
+    {
+      "id": "1612",
+      "title": "Política de Privacidade",
+      "path": "/politica-de-privacidade/",
+      "html": "<h1>Política de Privacidade e Segurança dos Dados</h1>\t\t\t\t\n\t\t<p><strong>1. Introdução</strong><br>A Multiforte Segurança valoriza a privacidade e a segurança dos dados pessoais de seus clientes, colaboradores e parceiros. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos as informações em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).</p><p><strong>2. Coleta de Dados</strong><br>Coletamos dados pessoais por meio de formulários de contato, cadastros em nosso site, interações em redes sociais e atendimento ao cliente. Os principais tipos de informações coletadas incluem:</p><ul><li><p>Nome completo;</p></li><li><p>E-mail e telefone;</p></li><li><p>Endereço (se aplicável);</p></li><li><p>Informações relacionadas aos serviços prestados;</p></li><li><p>Dados de navegação e cookies (quando aplicável).</p></li></ul><p><strong>3. Uso dos Dados</strong><br>Os dados coletados são utilizados para os seguintes fins:</p><ul><li><p>Prestação de serviços de segurança patrimonial e pessoal;</p></li><li><p>Atendimento a solicitações e suporte ao cliente;</p></li><li><p>Envio de comunicações institucionais e promocionais;</p></li><li><p>Cumprimento de obrigações legais e regulatórias;</p></li><li><p>Melhoria da experiência do usuário em nosso site.</p></li></ul><p><strong>4. Compartilhamento de Dados</strong><br>A Multiforte Segurança não compartilha dados pessoais com terceiros, exceto nas seguintes situações:</p><ul><li><p>Quando necessário para a prestação dos serviços contratados;</p></li><li><p>Para cumprimento de obrigações legais e regulatórias;</p></li><li><p>Com prestadores de serviços que operam sob contrato de confidencialidade.</p></li></ul><p><strong>5. Armazenamento e Proteção dos Dados</strong><br>Adotamos medidas técnicas e organizacionais para proteger os dados pessoais contra acessos não autorizados, perdas, destruição ou alteração. Os dados são armazenados em servidores seguros e acessíveis apenas por pessoal autorizado.</p><p><strong>6. Direitos dos Titulares de Dados</strong><br>Conforme a LGPD, você tem os seguintes direitos sobre seus dados pessoais:</p><ul><li><p>Confirmação da existência de tratamento de dados;</p></li><li><p>Acesso aos dados armazenados;</p></li><li><p>Correção de dados incompletos, inexatos ou desatualizados;</p></li><li><p>Anonimização, bloqueio ou eliminação de dados desnecessários;</p></li><li><p>Portabilidade dos dados, quando aplicável;</p></li><li><p>Revogação do consentimento para o tratamento de dados.</p></li></ul><p>Para exercer seus direitos, entre em contato pelo e-mail: [E-MAIL DE CONTATO].</p><p><strong>7. Uso de Cookies</strong><br>Nosso site pode utilizar cookies para melhorar a experiência do usuário. Você pode gerenciar suas preferências de cookies por meio das configurações do navegador.</p><p><strong>8. Alterações nesta Política</strong><br>A Multiforte Segurança pode atualizar esta Política de Privacidade periodicamente. Recomendamos que você revise esta página regularmente para se manter informado sobre eventuais alterações.</p><p><strong>9. Contato</strong><br>Para dúvidas sobre esta Política de Privacidade ou solicitações relacionadas aos seus dados, entre em contato conosco pelo telefone (65) 3054-4456.</p>",
+      "modified": "2025-03-14 19:59:41"
+    }
+  ],
+  "navigation": [
+    {
+      "label": "HOME",
+      "href": "/"
+    },
+    {
+      "label": "QUEM SOMOS",
+      "href": "/#quem-somos"
+    },
+    {
+      "label": "SERVIÇOS",
+      "href": "/#servicos"
+    },
+    {
+      "label": "PORTFÓLIO",
+      "href": "/#portfolio"
+    },
+    {
+      "label": "AVALIAÇÕES",
+      "href": "/#avaliacoes"
+    },
+    {
+      "label": "CONTATO",
+      "href": "/#contato"
+    }
+  ],
+  "hero": {
+    "lines": [
+      "15 ANOS",
+      "de experiência o​",
+      "grupo multiforte",
+      "se destaca como referência em \n",
+      "controle de acesso e demais facilities.  "
+    ],
+    "image": "/images/imgi_58_fachada_multiforte-.webp",
+    "seal": "/images/imgi_31_selo_15.webp",
+    "cta": {
+      "label": "Saiba mais ",
+      "href": "#quem-somos"
+    }
+  },
+  "services": [
+    {
+      "title": "SEGURANÇA<br>PATRIMONIAL",
+      "prompt": "SAIBA MAIS  <br>\n︾",
+      "detailTitle": "SEGURANÇA PATRIMONIAL",
+      "html": "Especializada em proteger o seu patrimônio de forma eficiente\nconfiável. <br>Contamos com uma equipe altamente treinada e qual da,\ncomposta por profissionais experientes no setor de segurança.",
+      "image": "/images/imgi_59_seguranca_patrimonial_multiforte_021.webp"
+    },
+    {
+      "title": "SEGURANÇA<br>ARMADA",
+      "prompt": "SAIBA MAIS  <br>\n︾",
+      "detailTitle": "SEGURANÇA ARMADA",
+      "html": "Nossa empresa é devidamente registrada e homologada pela\nPolícia Federal.<br> Atuamos com eficácia na segurança do\npatrimônio. <br>Nossos profissionais passam por treinamentos e\nreciclagem constantemente, sendo acompanhados por nossa\nequipe operacional de supervisão.",
+      "image": "/images/imgi_61_seguranca_armada_multiforte_02.webp"
+    },
+    {
+      "title": "AGENTE DE <br>PORTARIA",
+      "prompt": "SAIBA MAIS  <br>\n︾",
+      "detailTitle": "AGENTE DE PORTARIA",
+      "html": "Portaria com câmeras e monitoramento 24 horas é essencial\nara garantir a segurança e controle de acesso em diversos ambientes.<br>\nCom a presença do agente e o auxílio das câmeras de vigilância, é possível identificar e autorizar a entrada de pessoas de forma eficiente.<br>\nO monitoramento constante das câmeras permite uma resposta\nrápida a incidentes, enquanto as gravações servem como evidências\nem Caso de investigação.<br> Essa combinação de recursos tecnológicos e a presença humana capacitada garantem a proteção e a tranquilidade\nde todos envolvidos.",
+      "image": "/images/imgi_63_agente_portaria_multiforte_02-e1707712967726.webp"
+    },
+    {
+      "title": "RECEPCIONISTA",
+      "prompt": "SAIBA MAIS  <br>\n︾",
+      "detailTitle": "RECEPCIONISTA",
+      "html": "Contamos com uma equipe de profissionais treinados\ne capacitados para realizar o controle de acesso e\ndirecionamento adequado de visitantes, sempre com\ncordialidade.",
+      "image": "/images/imgi_65_recepcionista_multiforte_02.webp"
+    }
+  ],
+  "about": {
+    "eyebrow": "SOBRE NÓS",
+    "title": "Provendo a melhor composição de serviços e tecnologias para atender as demandas de nossos clientes.",
+    "html": "<p>O GRUPO MULTIFORTE desde 2010 honra seu compromisso de proteção à vida e à propriedade privada, contando com uma visão de prestação de serviço eficaz, empreendedora e diferenciada.</p>",
+    "image": "/images/imgi_67_quem-somos-multiforte-scaled.webp",
+    "counters": [
+      {
+        "number": 120,
+        "label": "Clientes Atendidos"
+      },
+      {
+        "number": 85,
+        "label": "Cidades Atendidas"
+      }
+    ]
+  },
+  "secondary": {
+    "title": "A segurança publica hoje, devido a alta demanda não\nabrange todo o território, onde entra a segurança privada.<br>\n<br>\nDevidamente homologada pela Polícia Federal contamos com\nprofissionais treinados e qualificados para atender a demanda\nconforme plano de ação implantado seja em órgãos públicos\ne privados.",
+    "html": "<p>Estamos qualificados e preparados para terceirizar todos os serviços. Trabalhamos continuamente com melhoria de processos, para que o clientenão se preocupe e deixe o serviço pesado com a gente.</p>",
+    "video": "https://youtu.be/R1MOzNQ1OKI"
+  },
+  "report": {
+    "title": "Relatório de Transparência e Igualdade Salarial ",
+    "html": "<p>Em conformidade com a Lei nº 14.611/2023, reforçamos nosso compromisso com a igualdade salarial entre homens e mulheres. Priorizamos a transparência nas remunerações, garantindo um ambiente justo e livre de discriminação.</p><p>Nosso compromisso vai além do cumprimento da legislação: buscamos construir um ambiente de trabalho mais justo e igualitário para todos.</p>",
+    "image": "/images/imgi_3_relatorio_multiforte_2025_1.webp",
+    "cta": {
+      "label": "Mais informações",
+      "href": "/instrucao-normativa/"
+    }
+  },
+  "portfolio": {
+    "title": "portfólio ",
+    "subtitle": "Confira nossa apresentação completa.",
+    "image": "/images/imgi_4_catalogo_multiforte-e1706649925907.webp",
+    "cta": {
+      "label": "Baixar Catálogo",
+      "href": "/wp-content/uploads/2024/01/apresentacao_multiforte.pdf"
+    }
+  },
+  "logos": [
+    {
+      "image": "/images/imgi_5_800px-Coat_of_arms_of_the_Brazilian_Federal_Police.svg-768x987.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_6_presidentes-oab-2021-1-768x313.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_7_2023_br_govfederal_marcaoficial_rgb-e1704406550578-768x360.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_8_Caixa_Economica_Federal_logo.svg-768x176.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_9_sefaz-mt-secretaria-de-fazenda-do-estado-de-mato-grosso-e1704406954640.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_10_229323229161945-e1704407110504.jpg.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_11_Volkswagen_Logo_till_1995.svg-768x768.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_12_cropped-naturafrig_logo_header.png-1.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_13_hospital-geral.png.webp",
+      "name": ""
+    },
+    {
+      "image": "/images/imgi_14_verana_multiforte.webp",
+      "name": "VERANA"
+    },
+    {
+      "image": "/images/imgi_15_magalu_multiforte.webp",
+      "name": "MAGALU"
+    },
+    {
+      "image": "/images/imgi_16_destilaria_novo_milenio_logo.webp",
+      "name": "destilaria"
+    },
+    {
+      "image": "/images/imgi_17_Escudo_ufmt.webp",
+      "name": "UFMT"
+    }
+  ],
+  "clientsTitle": "clientes atendidos",
+  "reviews": {
+    "title": "O QUE DIZEM NOSSOS CLIENTES",
+    "hidden": true,
+    "items": [
+      {
+        "name": "Benedito Campos ",
+        "job": "Controladoria",
+        "html": "<p><span><span>&quot;A avaliação é bem positiva, a empresa Multiforte Segurança tem demostrado competência, velocidade no retorno de dúvidas e informações, acesso fácil aos líderes.</span></span><br><span><span>Com toda certeza em nome da Seara Alimentos, indicaríamos esta empresa.&quot;</span></span></p>"
+      },
+      {
+        "name": "Ivani Buzatto",
+        "job": "Síndica Condomínio Primor das Torres",
+        "html": "<p><span><span>&quot;A empresa Multiforte Segurança , está na vanguarda das tendências do setor e tem uma forte reputação em inovação, por isso o Condomínio Primor das Torres indica está conceituada empresa.</span></span></p>"
+      },
+      {
+        "name": "Diego do Nascimento",
+        "job": "ControladoriaCoordenador de Segurança CD 1800 Magazine Luiza",
+        "html": "<p><span><span>A empresa Multiforte Segurança, é uma empresa muito parceira em todos os aspectos relacionado a segurança, sempre que acionada esta a disposição para realizar algo a mais pela Magazine Luiza!</span></span></p>"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Vamos Proteger Seu Patrimônio?",
+    "label": "Solicitar proposta ",
+    "href": "https://api.whatsapp.com/send?phone=5565984290110&text=Oi,%20vim%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida:"
+  },
+  "footer": {
+    "address": "Rua das Rosas, 350 Jd. Cuiabá Cuiabá - MT Cep. 78043-128",
+    "phones": [
+      "Fone: 65 3054-4456",
+      "65 98429-0110"
+    ],
+    "links": [
+      {
+        "label": "Instrução Normativa",
+        "href": "/instrucao-normativa/"
+      },
+      {
+        "label": "Politica de privacidade",
+        "href": "/politica-de-privacidade/"
+      }
+    ],
+    "copyrightDesktop": "<p>©Grupo Multiforte 2024.  Todos os direitos reservados. Made by ♥ <a href=\"https://mdsdigital.com.br/\" target=\"_blank\" rel=\"noopener noreferrer\">MDS Digital</a> &amp; <a href=\"https://agenciavincit.com.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Vincit </a></p>",
+    "copyrightMobile": "<p>©Grupo Multiforte 2024.  Todos os direitos reservados.</p>",
+    "socials": [
+      {
+        "href": "https://www.instagram.com/multiforteseguranca/",
+        "label": "Instagram"
+      },
+      {
+        "href": "https://www.facebook.com/multiforteseguranca",
+        "label": "Facebook"
+      },
+      {
+        "href": "https://www.youtube.com/@GrupoMultiForte",
+        "label": "YouTube"
+      },
+      {
+        "href": "https://maps.app.goo.gl/svHD5vSh6tb5WQ5g9",
+        "label": "Localização"
+      }
+    ],
+    "cta": {
+      "label": "Solicitar proposta ",
+      "href": "https://api.whatsapp.com/send?phone=5565984290110&text=Oi,%20vim%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida:"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+---
+import data from '../data/wordpress.json';
+---
+<section id="portfolio" class="bg-white py-16 md:py-24"><div class="container-site grid items-center gap-10 md:grid-cols-2 lg:gap-24">
+  <div><p class="mb-5 text-sm font-bold uppercase tracking-[.2em] text-brand">{data.portfolio.title}</p><h2 class="text-4xl font-semibold tracking-tight md:text-5xl">{data.portfolio.subtitle}</h2><a href={data.portfolio.cta.href} class="button mt-8">{data.portfolio.cta.label}<span aria-hidden="true" class="ml-8">↓</span></a></div>
+  <img src={data.portfolio.image} width="696" height="501" alt="" loading="lazy" decoding="async" class="w-full rounded-2xl" />
+</div></section>

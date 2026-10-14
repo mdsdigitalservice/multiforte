@@ -1,91 +1,96 @@
 # Multiforte Segurança — Astro + Tailwind
 
-Base inicial da migração de WordPress para Astro, com saída 100% estática para Cloudflare Pages.
+Migração estática do WordPress para Astro 7 e Tailwind 4. As seis páginas publicadas e a navegação por âncoras foram recuperadas do XML de 14/10/2026. Os 11 documentos do ZIP Markdown foram comparados aos dados do Elementor: todos coincidem.
 
-## Estado atual
+## Conteúdo e URLs
 
-O repositório estava vazio na análise de 14/10/2026. Foram importadas as 83 imagens do ZIP, sem modificar os arquivos. A home original não respondeu às tentativas de leitura neste ambiente. Portanto, esta entrega é a **estrutura técnica inicial**, não a migração completa do conteúdo.
+| Página | URL |
+| --- | --- |
+| Home | `/` |
+| PORTFÓLIO | `/portfolio/` |
+| teste | `/teste/` |
+| bio | `/bio/` |
+| Instrução Normativa | `/instrucao-normativa/` |
+| Política de Privacidade | `/politica-de-privacidade/` |
 
-A página inicial é uma prévia técnica identificada e não indexável. Os componentes recebem conteúdo por propriedades; não foram inventados textos comerciais, menus, contatos ou URLs. `Features` e `Services` ficam disponíveis para compor as seções após conferir a ordem do site original.
+Quem somos, Serviços, Portfólio, Avaliações e Contato no menu apontam para âncoras da home, conforme o WordPress. Não foram criadas páginas fictícias para esses itens. `/teste/` foi mantida porque está publicada no original, inclusive com o texto de exemplo. Rascunhos, autores, dados administrativos e templates internos do Elementor não foram publicados.
 
-## Desenvolvimento
+Os textos foram preservados, inclusive os telefones, o ano do rodapé e o placeholder de e-mail na política. Correções editoriais ficam para uma etapa separada. O link quebrado de YouTube na bio foi corrigido usando o endereço válido já presente no cabeçalho original. `/avalie-nos` mantém o redirecionamento 301 observado no site para a avaliação do Google.
 
-Requisito: Node.js 22.12+ (versão do projeto em `.node-version`).
+## Desenvolvimento e build
+
+Node.js 22.12+; versão sugerida em `.node-version`.
 
 ```bash
 npm ci
 npm run dev
-```
-
-```bash
 npm run check
 npm run build
+python3 scripts/verify-migration.py
 npm run preview
 ```
 
-`npm run build` gera `dist/`. Não é necessário adaptador SSR ou backend WordPress em produção.
+`npm run build` gera `dist/`, sem PHP, WordPress, React ou renderização por servidor. O vídeo usa iframe lazy do YouTube; serviços usam `<details>` acessível e o menu móvel usa JavaScript mínimo.
 
 ## Estrutura
 
 ```text
 src/
-  components/
-    Header.astro
-    Hero.astro
-    Features.astro
-    Services.astro
-    Footer.astro
+  components/    # Header, Hero, Services, About, MediaSection,
+                 # Portfolio, Clients, CallToAction, Footer
   layouts/BaseLayout.astro
   pages/
     index.astro
+    [...slug].astro
     404.astro
-  styles/global.css
+    sitemap.xml.ts
   data/
-    site.ts
-    images.json
+    wordpress.json        # Conteúdo público extraído
+    seo.json              # Titles e canonical capturados ao vivo
+    images.json           # Inventário das 83 imagens do ZIP
+    documents.json        # PDFs e imagens complementares
+    redirects.json
     migration.json
+  styles/global.css
 public/
-  images/        # 83 imagens do ZIP, já importadas
+  images/                 # 83 imagens já importadas
+  wp-content/uploads/     # Catálogo e relatórios nos caminhos originais
   _headers
-scripts/check-migration.mjs
-docs/MIGRACAO.md
+  _redirects
+scripts/
+  import-wordpress.py
+  verify-migration.py
 ```
 
-## Onde subir as imagens no GitHub
+## Imagens e PDFs
 
-As imagens anexadas **já estão em `public/images/`**. Não precisa enviar o ZIP novamente.
+As imagens anexadas **já estão em `public/images/`**. Não é necessário reenviar o ZIP. Para novas imagens pelo GitHub: descompactar no computador, abrir `public/images/`, selecionar **Add file → Upload files** e enviar os arquivos extraídos. Referenciar no código como `/images/arquivo.webp`, sem `public` na URL.
 
-Para novas imagens pelo GitHub: descompacte o ZIP no computador, abra `public/images/`, selecione **Add file → Upload files** e envie os arquivos extraídos. Evite criar uma segunda pasta `images` dentro dessa pasta e não suba apenas o ZIP: Astro não o descompacta no build.
-
-Uso no código:
-
-```astro
-<img src="/images/nome-do-arquivo.webp" alt="Descrição real da imagem" />
-```
-
-A URL pública omite `public/`. Mantenha os nomes já importados para não quebrar referências. O inventário `src/data/images.json` registra dimensões, tamanho e SHA-256 dos arquivos originais. Imagens futuras precisam ter suas dimensões e textos alternativos conferidos.
+O catálogo, os três relatórios em PDF e quatro imagens complementares foram baixados e preservados sem alteração em `public/wp-content/uploads/`, preservando as URLs originais. As imagens equivalentes do ZIP usam redirects individuais de suas antigas URLs para os WebP locais. O catálogo é armazenado em duas partes em `assets/documents/` para respeitar o limite de upload do conector GitHub. O hook `prebuild` recompõe o PDF original e valida seu SHA-256 antes de gerar o site; não há downloads do WordPress durante o build.
 
 ## Cloudflare Pages
 
-Conectar o repositório `mdsdigitalservice/multiforte` com:
+Conectar `mdsdigitalservice/multiforte` com:
 
 | Configuração | Valor |
 | --- | --- |
-| Framework preset | Astro |
-| Production branch | `main` |
+| Preset | Astro |
+| Branch | `main` |
 | Root directory | raiz do repositório |
-| Build command para prévia | `npm run build` |
-| Build output directory | `dist` |
+| Build command | `npm run build` |
+| Output directory | `dist` |
 | Node | `.node-version` ou `NODE_VERSION=22.22.0` |
 
-Ainda não foi criado um projeto Pages nem alterado o DNS. A configuração foi preparada no código. Use primeiro o endereço `pages.dev` para revisão.
+O projeto está preparado para o build do Pages. Nenhum domínio ou DNS foi alterado. A versão permanece com `noindex` para revisão antes da troca de hospedagem. Para ativar a indexação: mudar o padrão `noindex` em `BaseLayout.astro` e remover `X-Robots-Tag: noindex, nofollow` de `public/_headers`. Conferir o resultado visual em desktop e mobile antes da troca do domínio.
 
-Após concluir e conferir o conteúdo original, use `npm run build:production` como comando de produção. Esse comando impede substituir o site atual enquanto o inventário e a revisão estiverem pendentes; não é uma comparação automática dos textos.
+O comando adicional `npm run build:production` continua bloqueando o corte definitivo enquanto a revisão estiver pendente. Isso não impede `npm run build` para prévia. Detalhes e limites da verificação estão em `docs/MIGRACAO.md`.
 
-Antes de liberar o domínio: substituir a prévia, restaurar todas as URLs, metadados, links e formulários; remover o noindex da meta e de `public/_headers`; registrar a revisão em `src/data/migration.json`. Só então conferir o site em desktop/mobile e fazer a troca de hospedagem.
+## Reimportação
 
-## Próximo passo
+```bash
+python3 scripts/import-wordpress.py /caminho/export.xml
+npm run build
+python3 scripts/verify-migration.py /caminho/export.xml
+```
 
-Fornecer uma exportação do WordPress (Ferramentas → Exportar → Todo o conteúdo), o sitemap e, se possível, uma cópia HTML completa do site. O XML preserva páginas e slugs; uma cópia HTML ajuda a recuperar menus, rodapé e campos de plugins/Elementor que o XML pode não representar como conteúdo renderizado. PDFs e outros downloads também precisam ser copiados quando existirem: o ZIP recebido contém apenas imagens WebP.
-
-Veja `docs/MIGRACAO.md` para a conferência de SEO e conteúdo.
+O importador foi escrito para a estrutura deste site; IDs de widgets e templates identificam os blocos originais. Mudanças estruturais no Elementor exigem ajustar o importador. O XML bruto não fica no repositório público.

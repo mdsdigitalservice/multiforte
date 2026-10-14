@@ -2,14 +2,32 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import MediaSection from '../components/MediaSection.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Clients from '../components/Clients.astro';
+import CallToAction from '../components/CallToAction.astro';
 import Footer from '../components/Footer.astro';
-import { navigation } from '../data/site';
+import data from '../data/wordpress.json';
+import seo from '../data/seo.json';
+import { navigation, site } from '../data/site';
 ---
-<BaseLayout title="Multiforte Segurança — Prévia de migração" noindex={true}>
+<BaseLayout title={seo["/"].title} description={site.description} canonicalPath="/" image={data.hero.image}>
   <Header links={navigation} />
   <main id="conteudo">
-    <aside class="bg-brand px-6 py-3 text-center text-sm text-white">Prévia técnica. Conteúdo original e URLs aguardam importação e conferência.</aside>
-    <Hero title="Multiforte Segurança" image="/images/imgi_67_quem-somos-multiforte-scaled.webp" imageAlt="" />
+    <Hero />
+    <CallToAction />
+    <Services />
+    <About />
+    <MediaSection />
+    <section class="container-site grid items-center gap-10 py-16 md:grid-cols-[.8fr_1.2fr] md:py-24 lg:gap-24">
+      <img src={data.report.image} alt="" width="696" height="464" loading="lazy" decoding="async" class="w-full rounded-2xl" />
+      <div><h2 class="text-3xl font-semibold tracking-tight md:text-4xl">{data.report.title}</h2><div class="prose-site mt-6" set:html={data.report.html} /><a href={data.report.cta.href} class="button mt-7">{data.report.cta.label}<span aria-hidden="true" class="ml-6">↗</span></a></div>
+    </section>
+    <Portfolio />
+    <Clients />
+    <CallToAction dark />
   </main>
   <Footer />
 </BaseLayout>
