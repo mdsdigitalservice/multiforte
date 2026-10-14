@@ -1,0 +1,21 @@
+---
+import { site, type NavLink } from '../data/site';
+interface Props { links: NavLink[] }
+const { links } = Astro.props;
+---
+<header class="border-b border-white/10 bg-ink text-white">
+  <div class="container-site flex min-h-24 flex-wrap items-center justify-between gap-6 py-5">
+    <a href="/" aria-label={site.name}><img src={site.logo} width="300" height="72" alt={site.name} class="h-auto w-44 md:w-52" /></a>
+    {links.length > 0 && <>
+      <nav aria-label="Principal" class="hidden items-center gap-7 text-sm font-medium md:flex">
+        {links.map(link => <a href={link.href} class="hover:text-red-300" aria-current={Astro.url.pathname === link.href ? 'page' : undefined}>{link.label}</a>)}
+      </nav>
+      <details class="group w-full md:hidden">
+        <summary class="cursor-pointer py-3 font-medium">Menu</summary>
+        <nav aria-label="Principal móvel" class="flex flex-col gap-1 py-3">
+          {links.map(link => <a href={link.href} class="rounded px-3 py-3 hover:bg-white/10">{link.label}</a>)}
+        </nav>
+      </details>
+    </>}
+  </div>
+</header>

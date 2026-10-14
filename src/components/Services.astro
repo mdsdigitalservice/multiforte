@@ -1,0 +1,15 @@
+---
+interface Props { title: string; id?: string; items: { title: string; text?: string; image: string; imageAlt: string; href?: string; linkLabel?: string }[] }
+const { title, id, items } = Astro.props;
+---
+<section id={id} class="bg-white py-16 md:py-24"><div class="container-site">
+  <h2 class="text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2>
+  <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {items.map(item => <article class="flex flex-col overflow-hidden rounded-2xl bg-paper">
+      <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover" />
+      <div class="flex flex-1 flex-col p-7"><h3 class="text-2xl font-semibold">{item.title}</h3>
+      {item.text && <p class="mt-4 leading-relaxed text-zinc-600">{item.text}</p>}
+      {item.href && item.linkLabel && <a href={item.href} class="mt-6 inline-block font-semibold text-brand underline underline-offset-4">{item.linkLabel}</a>}</div>
+    </article>)}
+  </div>
+</div></section>

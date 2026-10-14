@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description, canonicalPath, image, noindex = true } = Astro.props;
+const canonical = canonicalPath ? new URL(canonicalPath, site.origin).href : undefined;
+const socialImage = image ? new URL(image, site.origin).href : undefined;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    {canonical && <meta property="og:url" content={canonical} />}
+    {socialImage && <meta property="og:image" content={socialImage} />}
+  </head>
+  <body>
+    <a href="#conteudo" class="sr-only fixed left-4 top-4 z-50 rounded bg-white p-4 focus:not-sr-only">Pular para o conteúdo</a>
+    <slot />
+  </body>
+</html>

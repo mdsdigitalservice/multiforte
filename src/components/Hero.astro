@@ -1,0 +1,14 @@
+---
+interface Props { title: string; text?: string; image: string; imageAlt: string; cta?: { label: string; href: string } }
+const { title, text, image, imageAlt, cta } = Astro.props;
+---
+<section class="relative isolate flex min-h-[65svh] items-end overflow-hidden bg-ink text-white md:min-h-[75svh]">
+  <img src={image} alt={imageAlt} fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 -z-20 h-full w-full object-cover" />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/55 to-ink/20"></div>
+  <div class="container-site py-16 md:py-24">
+    <div class="mb-7 h-1 w-16 bg-brand"></div>
+    <h1 class="max-w-4xl text-4xl font-bold leading-[1.06] tracking-tight sm:text-6xl lg:text-7xl">{title}</h1>
+    {text && <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-200 md:text-xl">{text}</p>}
+    {cta && <a href={cta.href} class="button mt-8">{cta.label}<span aria-hidden="true" class="ml-5">↗</span></a>}
+  </div>
+</section>

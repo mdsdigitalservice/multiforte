@@ -1,0 +1,10 @@
+---
+import { site, type NavLink } from '../data/site';
+interface Props { links?: NavLink[]; text?: string }
+const { links = [], text } = Astro.props;
+---
+<footer class="bg-ink py-12 text-white"><div class="container-site flex flex-col justify-between gap-8 md:flex-row md:items-center">
+  <img src={site.logo} alt={site.name} width="300" height="72" loading="lazy" class="h-auto w-44" />
+  {links.length > 0 && <nav aria-label="Rodapé" class="flex flex-wrap gap-5 text-sm">{links.map(link => <a href={link.href} class="hover:underline">{link.label}</a>)}</nav>}
+  {text && <p class="text-sm text-zinc-400">{text}</p>}
+</div></footer>
