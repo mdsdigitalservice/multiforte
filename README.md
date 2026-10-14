@@ -81,7 +81,7 @@ Conectar `mdsdigitalservice/multiforte` com:
 | Output directory | `dist` |
 | Node | `.node-version` ou `NODE_VERSION=22.22.0` |
 
-O projeto está preparado para o build do Pages. Nenhum domínio ou DNS foi alterado. A versão permanece com `noindex` para revisão antes da troca de hospedagem. Para ativar a indexação: mudar o padrão `noindex` em `BaseLayout.astro` e remover `X-Robots-Tag: noindex, nofollow` de `public/_headers`. Conferir o resultado visual em desktop e mobile antes da troca do domínio.
+Publicado em https://multiforte.pages.dev/ com deploy automático da branch `main`. O domínio original e seu DNS ainda não foram alterados. Detalhes da publicação e da revisão em `docs/PUBLICACAO.md`. A versão permanece com `noindex` para revisão antes da troca de hospedagem. Para ativar a indexação: mudar o padrão `noindex` em `BaseLayout.astro` e remover `X-Robots-Tag: noindex, nofollow` de `public/_headers`. Conferir o resultado visual em desktop e mobile antes da troca do domínio.
 
 O comando adicional `npm run build:production` continua bloqueando o corte definitivo enquanto a revisão estiver pendente. Isso não impede `npm run build` para prévia. Detalhes e limites da verificação estão em `docs/MIGRACAO.md`.
 
