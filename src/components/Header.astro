@@ -4,17 +4,17 @@ import data from '../data/wordpress.json';
 interface Props { links: NavLink[] }
 const { links } = Astro.props;
 ---
-<header class="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-white backdrop-blur-xl">
-  <div class="container-site flex min-h-24 items-center justify-between gap-6 py-4">
-    <a href="/" aria-label={site.name} class="shrink-0"><img src={site.logo} width="300" height="72" alt={site.name} class="h-auto w-40 lg:w-48" /></a>
+<header class="sticky top-0 z-40 border-b border-zinc-100 bg-white/95 text-ink backdrop-blur-xl">
+  <div class="container-site flex min-h-[72px] items-center justify-between gap-6 py-4">
+    <a href="/" aria-label={site.name} class="shrink-0 rounded-lg bg-ink px-3 py-2"><img src={site.logo} width="300" height="72" alt={site.name} class="h-auto w-32 lg:w-40" /></a>
     <nav aria-label="Principal" class="hidden items-center gap-5 text-xs font-semibold tracking-wide lg:flex">
-      {links.map(link => <a href={link.href} class="py-3 hover:text-red-300">{link.label}</a>)}
+      {links.map(link => <a href={link.href} class="py-3 hover:text-brand">{link.label}</a>)}
     </nav>
     <a href={data.footer.cta.href} class="button hidden shrink-0 sm:inline-flex">{data.footer.cta.label}<span aria-hidden="true" class="ml-3">↗</span></a>
     <details class="mobile-menu lg:hidden">
-      <summary class="cursor-pointer rounded-lg border border-white/25 px-4 py-3 text-sm font-semibold">Menu</summary>
-      <nav aria-label="Principal móvel" class="absolute inset-x-0 top-full flex max-h-[80svh] flex-col overflow-y-auto border-t border-white/10 bg-ink p-6 shadow-2xl">
-        {links.map(link => <a href={link.href} class="rounded-lg px-4 py-4 font-medium hover:bg-white/10">{link.label}</a>)}
+      <summary class="cursor-pointer rounded-lg border border-zinc-200 px-4 py-3 text-sm font-semibold">Menu</summary>
+      <nav aria-label="Principal móvel" class="absolute inset-x-0 top-full flex max-h-[80svh] flex-col overflow-y-auto border-t border-zinc-100 bg-white p-6 shadow-2xl">
+        {links.map(link => <a href={link.href} class="rounded-lg px-4 py-4 font-medium hover:bg-zinc-50">{link.label}</a>)}
         <a href={data.footer.cta.href} class="button mt-4">{data.footer.cta.label}</a>
       </nav>
     </details>

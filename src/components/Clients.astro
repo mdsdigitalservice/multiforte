@@ -1,7 +1,7 @@
 ---
 import data from '../data/wordpress.json';
 ---
-<section id="avaliacoes" class="container-site py-16 md:py-24" aria-labelledby="clients-title" data-clients>
+<section id="clientes" class="container-site py-16 md:py-24" aria-labelledby="clients-title" data-clients>
   <div class="mb-10 flex flex-wrap items-center justify-between gap-6">
     <h2 id="clients-title" class="type-clients">{data.clientsTitle}</h2>
     <div class="flex items-center gap-2">
@@ -21,7 +21,7 @@ import data from '../data/wordpress.json';
   .clients-track { display: flex; will-change: transform; }
   .client-slide { flex: 0 0 calc(100% / var(--visible)); min-width: 0; min-height: 180px; padding: 32px; display: flex; align-items: center; justify-content: center; }
   .client-arrow { width: 48px; height: 48px; border: 1px solid #d4d4d8; border-radius: 50%; font-size: 24px; cursor: pointer; }
-  .client-arrow:hover { background: #a71924; border-color: #a71924; color: white; }
+  .client-arrow:hover { background: #E30613; border-color: #E30613; color: white; }
   @media (min-width: 640px) { .clients-viewport { --visible: 3; } }
   @media (min-width: 1024px) { .clients-viewport { --visible: 5; } }
 </style>
@@ -102,7 +102,3 @@ import data from '../data/wordpress.json';
     syncPause();
   }
 </script>
-<section hidden={data.reviews.hidden} class="container-site pb-24">
-  <h2 class="mb-10 type-clients">{data.reviews.title}</h2>
-  <div class="grid gap-6 md:grid-cols-3">{data.reviews.items.map(review => <figure class="rounded-2xl bg-white p-8"><blockquote class="leading-relaxed" set:html={review.html} /><figcaption class="mt-6"><strong>{review.name}</strong><span class="mt-1 block text-sm text-zinc-500">{review.job}</span></figcaption></figure>)}</div>
-</section>

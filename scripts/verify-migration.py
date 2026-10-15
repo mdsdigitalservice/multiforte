@@ -40,7 +40,7 @@ for p in pages:
   parts=urlsplit(u)
   if parts.scheme or parts.netloc or not parts.path.startswith('/'):continue
   path=unquote(parts.path)
-  if path.endswith(('.pdf','.webp','.jpg','.png','.svg','.css','.js')):
+  if path.endswith(('.pdf','.webp','.jpg','.png','.svg','.css','.js','.ttf','.woff2')):
    if not (ROOT/'dist'/path.lstrip('/')).is_file():errors.append('Missing resource '+path)
   elif path in {p['path'] for p in pages}:pass
   elif path=='/avalie-nos':pass  # Existing plugin redirect, handled by _redirects after discovery.

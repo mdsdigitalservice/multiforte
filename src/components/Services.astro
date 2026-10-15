@@ -1,18 +1,12 @@
 ---
 import data from '../data/wordpress.json';
+const descriptions = ['Equipe treinada e qualificada para proteger seu patrimônio.','Profissionais supervisionados e treinamento constante.','Controle de acesso com câmeras e monitoramento 24 horas.','Atendimento cordial e controle profissional de visitantes.'];
 ---
-<section id="servicos" aria-label="Serviços" class="container-site py-16 md:py-24">
-  <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-    {data.services.map((item, index) => <article class="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-      <div class="relative aspect-[4/5] overflow-hidden bg-ink">
-        <img src={item.image} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/10"></div>
-        <div class="absolute inset-x-0 bottom-0 p-6 text-white"><span aria-hidden="true" class="mb-4 block text-xs font-bold tracking-widest text-white/60">0{index + 1}</span><h2 class="type-service" set:html={item.title} /></div>
-      </div>
-      <details class="service-detail group p-6">
-        <summary class="cursor-pointer text-sm font-semibold text-brand"><span set:html={item.prompt} /></summary>
-        <div class="pt-6"><h3 class="mb-4 text-lg font-semibold" set:html={item.detailTitle} /><div class="leading-relaxed text-zinc-600" set:html={item.html} /></div>
-      </details>
-    </article>)}
-  </div>
-</section>
+<section id="servicos" class="bg-zinc-50 py-16 md:py-20"><div class="container-site">
+ <p class="eyebrow">Nossos serviços</p><h2 class="type-section mt-3 max-w-2xl">Proteção completa para seu patrimônio</h2>
+ <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">{data.services.map((item,i) => <article class="overflow-hidden rounded-[20px] border border-zinc-100 bg-white shadow-sm">
+  <img src={item.image} alt={item.title.replace(/<br\s*\/?>(\s*)/gi,' ')} width="500" height="500" loading="lazy" decoding="async" class="aspect-[5/4] w-full object-cover object-top" />
+  <div class="p-6"><h3 class="text-lg font-bold" set:html={item.title.replace(/<br\s*\/?>(\s*)/gi,' ')} /><p class="mt-3 text-sm text-zinc-600">{descriptions[i]}</p>
+   <details class="service-detail mt-5"><summary class="text-sm font-bold text-brand">Saiba mais</summary><div class="mt-4 text-sm leading-relaxed text-zinc-600" set:html={item.html} /></details>
+  </div></article>)}</div>
+</div></section>

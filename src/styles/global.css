@@ -1,37 +1,70 @@
 @import "tailwindcss";
-
-@font-face { font-family: "Barlow"; src: url("/fonts/barlow-400-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow"; src: url("/fonts/barlow-500-latin.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow"; src: url("/fonts/barlow-600-latin.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow"; src: url("/fonts/barlow-700-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow"; src: url("/fonts/barlow-800-latin.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow"; src: url("/fonts/barlow-900-latin.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
-
-@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-400-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-500-latin.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-600-latin.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-700-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-
-@theme {
-  --color-brand: #a71924;
-  --color-ink: #111318;
-  --color-paper: #f5f4f1;
-  --font-sans: "Barlow", Arial, sans-serif;
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/inter-400.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/inter-500.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/montserrat-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/montserrat-600.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/montserrat-700.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/montserrat-800.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/fonts/montserrat-900.ttf) format('truetype');
+}
+@theme { --color-brand: #E30613; --color-ink: #0A1E3C; --color-paper: #ffffff; --font-sans: "Inter", Arial, sans-serif; }
 @layer base {
-  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-  body { @apply m-0 bg-paper font-sans text-ink antialiased; }
-  :focus-visible { outline: 3px solid #a71924; outline-offset: 5px; }
-  img { @apply max-w-full; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-  }
+ html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+ body { margin:0; background:white; color:#0A1E3C; font-family:var(--font-sans); font-size:1rem; line-height:1.65; }
+ h1,h2,h3,h4,h5,h6 { font-family:"Montserrat",Arial,sans-serif; font-weight:800; line-height:1.15; overflow-wrap:break-word; }
+ img { max-width:100%; height:auto; }
+ button,input,select,textarea { font:inherit; }
+ button,summary { cursor:pointer; }
+ :focus-visible { outline:3px solid #E30613; outline-offset:5px; }
+ @media(prefers-reduced-motion:reduce) { html {scroll-behavior:auto} *,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important;} }
 }
 @layer components {
-  .container-site { @apply mx-auto w-full max-w-7xl px-6 md:px-10; }
-  .button { @apply inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-900; }
-  .prose-site { @apply space-y-5 text-base leading-relaxed text-zinc-700 md:text-lg; }
+ .container-site { @apply mx-auto w-full max-w-7xl px-6 md:px-10; }
+ .button { @apply inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-red-800; font-family:"Montserrat",Arial,sans-serif; }
+ .button-navy { background:#0A1E3C; } .button-navy:hover {background:#132E5C;}
+ .button-outline { background:transparent; color:#0A1E3C; border:1px solid #d1d5db; } .button-outline:hover {background:#f3f4f6;}
+ .prose-site { @apply space-y-5 text-base leading-relaxed text-zinc-600; }
 }
 @layer components {
   .wordpress-content { @apply space-y-6 text-base leading-relaxed text-zinc-700 md:text-lg; overflow-wrap: anywhere; }
@@ -53,32 +86,11 @@
   .service-detail summary br { display: none; }
 }
 
-/* Typography follows the original Elementor hierarchy; layouts stay unchanged. */
-body { font-size: 1.2rem; font-weight: 400; line-height: 1.5; }
-button, input, select, textarea { font-family: inherit; }
-:is(h1, h2, h3, h4, h5, h6) { font-family: var(--font-sans); font-weight: 600; line-height: 1.2; letter-spacing: normal; overflow-wrap: break-word; }
-.type-display { font-size: 5rem; font-weight: 900; line-height: 1.05; letter-spacing: normal; }
-.type-hero-sub { font-size: 2.7rem; font-weight: 600; line-height: 1.15; letter-spacing: -1.3px; }
-.type-hero-name { font-size: 2rem; font-weight: 900; line-height: 1.15; text-transform: uppercase; letter-spacing: normal; }
-.type-section { font-size: 2.5rem; font-weight: 800; line-height: 1.2; text-transform: uppercase; letter-spacing: -1.3px; }
-.type-portfolio { font-size: 3.1rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; letter-spacing: normal; }
-.type-clients { font-size: 1.5rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; letter-spacing: normal; }
-.type-lead { font-size: 1.3rem; font-weight: 600; line-height: 1.3; letter-spacing: normal; }
-.type-body, .prose-site, .wordpress-content { font-size: 1.2rem; font-weight: 400; line-height: 1.5; }
-.type-cta { font-size: 2.5rem; font-weight: 600; line-height: 1.2; text-transform: uppercase; letter-spacing: .6px; }
-.type-service { font-size: 2rem; font-weight: 800; line-height: 1.15; letter-spacing: normal; }
-.service-detail { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 1.3rem; line-height: 1.3; }
-.service-detail h3 { font-family: inherit; font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
-.service-detail summary { font-size: 1.2rem; font-weight: 400; text-transform: uppercase; }
-.service-detail :where(p, div) { line-height: 1.3; }
-.button { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 1.3rem; font-weight: 500; line-height: 1.2; text-transform: uppercase; letter-spacing: normal; }
-.type-stat { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 5.5rem; font-weight: 600; line-height: 1; letter-spacing: normal; }
-.type-stat-label { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 1.2rem; font-weight: 400; }
-.wordpress-content :is(h1, h2) { font-size: 2rem; font-weight: 600; line-height: 1.2; }
-.wordpress-content h3 { font-size: 1.5rem; font-weight: 600; }
-@media (min-width: 768px) {
- .type-display { font-size: 5.2rem; }
- .type-hero-name { font-size: 3.1rem; }
- .type-lead { font-size: 1.5rem; }
- .type-clients { font-size: 2rem; }
-}
+
+.type-section,.type-clients,.type-cta { font-size:clamp(1.75rem,3vw,2.5rem); font-weight:900; letter-spacing:-.04em; }
+.type-lead {font-size:clamp(1.25rem,2.2vw,1.7rem); font-weight:700; line-height:1.4;}
+.type-portfolio {font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.05em;line-height:1;}
+.type-body {font-size:1rem;line-height:1.8;}
+.type-stat {font-family:"Montserrat",Arial,sans-serif;font-size:2rem;font-weight:900;line-height:1.1;}
+.type-stat-label {font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;}
+.eyebrow {font-family:"Montserrat",Arial,sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#E30613;}

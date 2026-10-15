@@ -2,7 +2,7 @@
 import { site } from '../data/site';
 import data from '../data/wordpress.json';
 ---
-<footer id="contato" class="bg-ink py-14 text-white"><div class="container-site">
+<footer id="rodape" class="bg-ink py-14 text-white"><div class="container-site">
   <div class="grid gap-10 border-b border-white/10 pb-10 md:grid-cols-[1fr_1.4fr_1fr]">
     <div><a href="/" aria-label={site.name}><img src={site.logo} alt={site.name} width="300" height="72" loading="lazy" class="h-auto w-48" /></a><div class="mt-6 flex flex-wrap gap-4 text-xs text-zinc-300">{data.footer.socials.map(social => <a href={social.href} class="py-2 hover:text-white">{social.label}</a>)}</div></div>
     <div class="space-y-4 text-sm leading-relaxed text-zinc-300"><p>{data.footer.address}</p><p><a href="tel:+556530544456" class="inline-block py-1 hover:text-white">{data.footer.phones[0]}</a><br /><a href={data.footer.cta.href} class="inline-block py-1 hover:text-white">{data.footer.phones[1]}</a></p></div>

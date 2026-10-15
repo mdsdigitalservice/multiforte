@@ -1,19 +1,18 @@
 ---
 import data from '../data/wordpress.json';
-const hero = data.hero;
 ---
-<section id="home" class="relative isolate flex min-h-[80svh] items-center overflow-hidden bg-ink text-white">
-  <img src={hero.image} alt="" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/80 to-ink/35"></div>
-  <div class="container-site grid items-end gap-12 py-20 md:grid-cols-[1fr_auto] md:py-28">
-    <div class="max-w-3xl">
-      <div class="mb-7 h-1 w-16 bg-brand"></div>
-      <h1 class="type-display">{hero.lines[0]}</h1>
-      <p class="mt-4 type-hero-sub text-zinc-200">{hero.lines[1]}</p>
-      <p class="mt-1 type-hero-name">{hero.lines[2]}</p>
-      <p class="mt-7 type-lead text-zinc-200">{hero.lines[3]}<br /><strong class="font-semibold text-white">{hero.lines[4]}</strong></p>
-      <a href={hero.cta.href} class="mt-9 inline-flex min-h-12 items-center gap-8 border-b border-white/60 py-2 font-semibold">{hero.cta.label}<span aria-hidden="true">↗</span></a>
-    </div>
-    <img src={hero.seal} width="150" height="150" alt="" class="hidden h-auto w-36 opacity-90 md:block lg:w-44" />
-  </div>
+<section id="home" class="container-site grid items-center gap-12 py-14 md:py-24 lg:grid-cols-2 lg:gap-16">
+ <div class="min-w-0">
+  <span class="inline-flex rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-[10px] font-bold tracking-widest sm:text-xs">DESDE 2010 · HOMOLOGADA PELA POLÍCIA FEDERAL</span>
+  <h1 class="mt-6 text-[2.5rem] font-black leading-[1.02] tracking-[-.045em] sm:text-5xl xl:text-[3.5rem]">Referência em <span class="text-brand">controle de acesso</span> e facilities.</h1>
+  <p class="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600">Desde 2010 protegendo vidas e patrimônios em condomínios, indústrias, comércios e órgãos públicos. Equipe treinada e supervisionada 24h.</p>
+  <div class="mt-8 flex flex-wrap gap-3"><a href="#contato" class="button button-navy">Vamos proteger seu patrimônio?</a><a href="#portfolio" class="button button-outline">Ver portfólio ↗</a></div>
+  <dl class="mt-10 grid grid-cols-2 gap-6 border-t border-zinc-200 pt-7">{data.about.counters.map(c => <div><dd class="type-stat">{c.number}+</dd><dt class="type-stat-label mt-2 text-zinc-500">{c.label}</dt></div>)}</dl>
+ </div>
+ <div class="hero-visual relative isolate flex min-h-[440px] flex-col justify-between overflow-hidden rounded-[32px] bg-ink p-6 text-white sm:min-h-[560px] sm:p-8">
+  <img src={data.hero.image} alt="Fachada da Multiforte Segurança em Cuiabá" width="1920" height="1080" loading="eager" fetchpriority="high" class="absolute inset-0 -z-20 h-full w-full object-cover" />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/70 via-ink/15 to-ink/95"></div>
+  <div class="flex items-start justify-between gap-4"><p class="max-w-44 text-xs font-bold tracking-widest">SEGURANÇA PATRIMONIAL<br /><span class="mt-2 block font-normal text-white/70">CUIABÁ · MT</span></p><img src={data.hero.seal} alt="Grupo Multiforte, 15 anos: eu faço parte desta história" width="150" height="150" class="w-28 sm:w-36" /></div>
+  <div class="space-y-3"><div class="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur"><p class="font-bold">Segurança armada</p><p class="text-xs text-white/70">Registrada e homologada pela Polícia Federal</p></div><div class="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur"><p class="font-bold">Portaria + monitoramento 24h</p><p class="text-xs text-white/70">Controle de acesso e tranquilidade</p></div></div>
+ </div>
 </section>
