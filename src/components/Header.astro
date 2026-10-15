@@ -7,6 +7,10 @@ const { links } = Astro.props;
 <header class="site-header">
   <div class="header-bar">
     <a href="/" aria-label={site.name} class="header-logo"><img src={site.logo} width="300" height="72" alt={site.name} decoding="async" /></a>
+    <nav class="desktop-navigation" aria-label="Principal desktop">
+      {links.map(link => <a href={link.href}>{link.label}</a>)}
+      <a href={data.footer.cta.href} class="button header-contact">{data.footer.cta.label}<span aria-hidden="true">↗</span></a>
+    </nav>
     <details class="header-menu">
       <summary aria-label="Abrir menu de navegação" aria-controls="header-navigation" aria-expanded="false">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -38,6 +42,15 @@ const { links } = Astro.props;
   nav a:not(.button):hover { background:rgba(255,255,255,.08); }
   .header-contact { align-self:flex-start; gap:16px; margin-top:12px; }
   .site-header-space { height:clamp(80px,20vw,112px); }
+  .desktop-navigation { display:none; }
+  @media(min-width:1024px) {
+    .header-logo { width:240px; }
+    .header-menu { display:none; }
+    .desktop-navigation { position:static; inset:auto; display:flex; flex-direction:row; align-items:center; gap:6px; max-height:none; overflow:visible; padding:0; background:transparent; border:0; -webkit-backdrop-filter:none; backdrop-filter:none; }
+    .desktop-navigation a { white-space:nowrap; }
+    .desktop-navigation a:not(.button) { padding:12px 10px; font-size:.85rem; }
+    .desktop-navigation .header-contact { align-self:auto; margin:0 0 0 12px; gap:12px; font-size:.75rem; }
+  }
   :global(html) { scroll-padding-top:calc(clamp(80px,20vw,112px) + 16px); }
 </style>
 <script>
