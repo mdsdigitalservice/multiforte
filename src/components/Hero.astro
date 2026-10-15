@@ -1,18 +1,45 @@
 ---
 import data from '../data/wordpress.json';
 ---
-<section id="home" class="container-site grid items-center gap-12 py-14 md:py-24 lg:grid-cols-2 lg:gap-16">
- <div class="min-w-0">
-  <span class="inline-flex rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-[10px] font-bold tracking-widest sm:text-xs">DESDE 2010 · HOMOLOGADA PELA POLÍCIA FEDERAL</span>
-  <h1 class="mt-6 text-[2.5rem] font-black leading-[1.02] tracking-[-.045em] sm:text-5xl xl:text-[3.5rem]">Referência em <span class="text-brand">controle de acesso</span> e facilities.</h1>
-  <p class="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600">Desde 2010 protegendo vidas e patrimônios em condomínios, indústrias, comércios e órgãos públicos. Equipe treinada e supervisionada 24h.</p>
-  <div class="mt-8 flex flex-wrap gap-3"><a href="#contato" class="button button-navy">Vamos proteger seu patrimônio?</a><a href="#portfolio" class="button button-outline">Ver portfólio ↗</a></div>
-  <dl class="mt-10 grid grid-cols-2 gap-6 border-t border-zinc-200 pt-7">{data.about.counters.map(c => <div><dd class="type-stat">{c.number}+</dd><dt class="type-stat-label mt-2 text-zinc-500">{c.label}</dt></div>)}</dl>
- </div>
- <div class="hero-visual relative isolate flex min-h-[440px] flex-col justify-between overflow-hidden rounded-[32px] bg-ink p-6 text-white sm:min-h-[560px] sm:p-8">
-  <img src={data.hero.image} alt="Fachada da Multiforte Segurança em Cuiabá" width="1920" height="1080" loading="eager" fetchpriority="high" class="absolute inset-0 -z-20 h-full w-full object-cover" />
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/70 via-ink/15 to-ink/95"></div>
-  <div class="flex items-start justify-between gap-4"><p class="max-w-44 text-xs font-bold tracking-widest">SEGURANÇA PATRIMONIAL<br /><span class="mt-2 block font-normal text-white/70">CUIABÁ · MT</span></p><img src={data.hero.seal} alt="Grupo Multiforte, 15 anos: eu faço parte desta história" width="150" height="150" class="w-28 sm:w-36" /></div>
-  <div class="space-y-3"><div class="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur"><p class="font-bold">Segurança armada</p><p class="text-xs text-white/70">Registrada e homologada pela Polícia Federal</p></div><div class="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur"><p class="font-bold">Portaria + monitoramento 24h</p><p class="text-xs text-white/70">Controle de acesso e tranquilidade</p></div></div>
+<section id="home" class="hero-banner" aria-labelledby="hero-title">
+ <img src={data.hero.image} alt="Vigilante uniformizado da Multiforte em frente à sede em Cuiabá" width="1920" height="700" loading="eager" fetchpriority="high" decoding="async" class="hero-photo" />
+ <div class="hero-shade" aria-hidden="true"></div>
+ <div class="container-site hero-inner">
+  <img src={data.hero.seal} alt="Grupo Multiforte, 15 anos: eu faço parte desta história" width="150" height="150" class="hero-seal" />
+  <div class="hero-copy">
+   <p class="hero-kicker">DESDE 2010 · HOMOLOGADA PELA POLÍCIA FEDERAL</p>
+   <h1 id="hero-title">Referência em <span>controle de acesso</span> e facilities.</h1>
+   <p class="hero-description">Desde 2010 protegendo vidas e patrimônios em condomínios, indústrias, comércios e órgãos públicos. Equipe treinada e supervisionada 24h.</p>
+   <div class="hero-actions"><a href="#contato" class="button">Vamos proteger seu patrimônio?</a><a href="#portfolio" class="button hero-secondary">Ver portfólio ↗</a></div>
+   <dl class="hero-stats">{data.about.counters.map(c => <div><dd class="type-stat">{c.number}+</dd><dt class="type-stat-label">{c.label}</dt></div>)}</dl>
+  </div>
  </div>
 </section>
+<style>
+ .hero-banner { position:relative; isolation:isolate; overflow:hidden; background:#0A1E3C; color:white; }
+ .hero-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:62% center; z-index:-2; }
+ .hero-shade { position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(4,14,29,.94) 0%,rgba(4,14,29,.84) 29%,rgba(4,14,29,.25) 62%,rgba(4,14,29,.08) 100%); }
+ .hero-inner { position:relative; min-height:650px; display:flex; align-items:center; padding-top:70px; padding-bottom:64px; }
+ .hero-copy { max-width:560px; }
+ .hero-kicker { font-family:"Montserrat",Arial,sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.12em; color:#fff; }
+ .hero-copy h1 { margin-top:24px; font-size:clamp(2.25rem,4vw,3.5rem); font-weight:900; line-height:1.06; letter-spacing:-.045em; }
+ .hero-copy h1 span { color:#fff; }
+ .hero-description { margin-top:24px; max-width:510px; font-size:1.05rem; line-height:1.7; color:#e4e7ec; }
+ .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+ .hero-secondary { background:transparent; border:1px solid #ffffff80; color:white; }
+ .hero-secondary:hover { background:#ffffff1f; }
+ .hero-stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:420px; margin-top:32px; padding-top:24px; border-top:1px solid #ffffff40; }
+ .hero-stats dt { margin-top:8px; color:#e4e7ec; }
+ .hero-seal { position:absolute; top:28px; right:40px; width:130px; height:auto; }
+ @media(max-width:767px) {
+  .hero-photo { height:370px; object-position:63% top; }
+  .hero-shade { background:linear-gradient(180deg,rgba(10,30,60,.02) 0,rgba(10,30,60,.02) 180px,rgba(10,30,60,.6) 280px,#0A1E3C 365px); }
+  .hero-inner { min-height:0; padding-top:325px; padding-bottom:44px; }
+  .hero-seal { top:18px; right:20px; width:96px; }
+  .hero-kicker { font-size:.6rem; letter-spacing:.08em; }
+  .hero-copy h1 { margin-top:18px; font-size:clamp(2rem,8.5vw,3rem); }
+  .hero-description { margin-top:20px; font-size:1rem; }
+  .hero-actions { gap:10px; }
+  .hero-actions .button { font-size:.75rem; padding-left:20px; padding-right:20px; }
+ }
+</style>
