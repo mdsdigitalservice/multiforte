@@ -4,7 +4,7 @@ const about = data.about;
 ---
 <section id="quem-somos" class="bg-white py-16 md:py-24">
   <div class="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-    <div class="relative"><img src={about.image} alt="" width="2560" height="1707" loading="lazy" decoding="async" class="aspect-[4/5] w-full rounded-2xl object-cover" /><div aria-hidden="true" class="absolute -bottom-3 right-6 h-3 w-24 bg-brand"></div></div>
+    <div class="relative"><img src={about.image} alt="" width="960" height="1200" loading="lazy" decoding="async" class="aspect-[4/5] w-full rounded-2xl object-cover" /><div aria-hidden="true" class="absolute -bottom-3 right-6 h-3 w-24 bg-brand"></div></div>
     <div><p class="eyebrow">{about.eyebrow}</p>
       <h2 class="section-title">{about.title}</h2>
       <div class="prose-site mt-7" set:html={about.html} />

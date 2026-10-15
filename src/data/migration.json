@@ -11,5 +11,5 @@
     "/instrucao-normativa/",
     "/politica-de-privacidade/"
   ],
-  "notes": "Public WXR content imported and crosschecked with all 11 Markdown documents. Deployed to https://multiforte.pages.dev/. Desktop navigation, service expansion, legal pages and one PDF verified. Mobile home at 390px inspected. Domain cutover and indexing activation pending."
+  "notes": "Public WXR content imported and crosschecked with all 11 Markdown documents. Deployed to https://multiforte.pages.dev/. Desktop navigation, service expansion, legal pages and one PDF verified. Mobile home at 390px inspected. Domain cutover and indexing activation pending. Performance audit: indexing activated for public pages at user request; /teste/ and 404 retain noindex. Domain cutover remains pending."
 }

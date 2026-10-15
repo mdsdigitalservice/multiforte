@@ -13,7 +13,7 @@ const { page } = Astro.props;
 const metadata = seo[page.path as keyof typeof seo];
 const isBio = page.path === '/bio/';
 ---
-<BaseLayout title={metadata?.title ?? page.title} canonicalPath={page.path} image={data.hero.image}>
+<BaseLayout title={metadata?.title ?? page.title} canonicalPath={page.path} image={data.hero.image} noindex={page.path === "/teste/"}>
   {!isBio && <Header links={navigation} />}
   <main id="conteudo" class:list={['container-site min-h-[60svh] py-14 md:py-24', isBio && 'max-w-2xl!']}>
     {isBio && <a href="/" aria-label={site.name} class="mx-auto mb-10 block w-fit rounded-2xl bg-ink p-8"><img src={site.logo} width="300" height="72" alt={site.name} class="w-56" /></a>}

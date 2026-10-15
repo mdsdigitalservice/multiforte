@@ -5,6 +5,6 @@ export default defineConfig({
   site: 'https://www.multiforteseguranca.com.br',
   output: 'static',
   outDir: './dist',
-  build: { format: 'directory' },
+  build: { format: 'directory', inlineStylesheets: 'always' },
   vite: { plugins: [tailwindcss()] },
 });

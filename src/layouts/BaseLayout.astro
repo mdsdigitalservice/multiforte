@@ -7,8 +7,9 @@ interface Props {
   canonicalPath?: string;
   image?: string;
   noindex?: boolean;
+  preloadImage?: string;
 }
-const { title, description, canonicalPath, image, noindex = true } = Astro.props;
+const { title, description = site.description, canonicalPath, image, noindex = false, preloadImage } = Astro.props;
 const canonical = canonicalPath ? new URL(canonicalPath, site.origin).href : undefined;
 const socialImage = image ? new URL(image, site.origin).href : undefined;
 ---
@@ -18,7 +19,9 @@ const socialImage = image ? new URL(image, site.origin).href : undefined;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="preload" href="/fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/optimized/inter-400.06c504d11b.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/optimized/montserrat-900.28032ffe4c.woff2" as="font" type="font/woff2" crossorigin />
+    {preloadImage && <link rel="preload" href={preloadImage} as="image" type="image/avif" fetchpriority="high" />}
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}
     {noindex && <meta name="robots" content="noindex, nofollow" />}

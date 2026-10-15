@@ -2,10 +2,13 @@
 import data from '../data/wordpress.json';
 ---
 <section id="home" class="hero-banner" aria-labelledby="hero-title">
+ <picture>
+ <source srcset={data.hero.avif} type="image/avif" />
  <img src={data.hero.image} alt="Vigilante uniformizado da Multiforte em frente à sede em Cuiabá" width="1712" height="624" loading="eager" fetchpriority="high" decoding="async" class="hero-photo" />
+ </picture>
  <div class="hero-shade" aria-hidden="true"></div>
  <div class="container-site hero-inner">
-  <img src={data.hero.seal} alt="Grupo Multiforte, 15 anos: eu faço parte desta história" width="150" height="150" class="hero-seal" />
+  <img src={data.hero.seal} alt="Grupo Multiforte, 15 anos: eu faço parte desta história" width="150" height="150" decoding="async" fetchpriority="low" class="hero-seal" />
   <div class="hero-copy">
    <p class="hero-kicker">DESDE 2010 · HOMOLOGADA PELA POLÍCIA FEDERAL</p>
    <h1 id="hero-title">Referência em <span>controle de acesso</span> e facilities.</h1>

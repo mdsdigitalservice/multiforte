@@ -3,7 +3,26 @@ import data from '../data/wordpress.json';
 ---
 <section class="bg-white py-16 md:py-24"><div class="container-site grid items-center gap-12 lg:grid-cols-2">
   <div><p class="eyebrow">Segurança e confiança</p><h2 class="section-title">Profissionais preparados para proteger</h2><div class="prose-site mt-6" set:html={data.secondary.title} /><div class="mt-8 type-body text-zinc-600" set:html={data.secondary.html} /></div>
-  <div class="overflow-hidden rounded-2xl border border-white/10 bg-black">
-    <iframe src="https://www.youtube-nocookie.com/embed/R1MOzNQ1OKI" title="Vídeo institucional — Multiforte Segurança" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="aspect-video w-full border-0"></iframe>
+  <div class="relative aspect-video overflow-hidden rounded-2xl bg-black" data-institutional-video>
+    <button type="button" class="relative block h-full w-full" aria-label="Reproduzir vídeo institucional da Multiforte Segurança">
+      <img src="/images/optimized/video-institucional.61a680147a.webp" width="640" height="233" loading="lazy" decoding="async" alt="" class="absolute inset-0 h-full w-full object-cover" />
+      <span class="absolute inset-0 flex items-center justify-center bg-black/20" aria-hidden="true"><span class="flex h-16 w-20 items-center justify-center rounded-2xl bg-brand text-white"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7Z"/></svg></span></span>
+    </button>
   </div>
 </div></section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-institutional-video]').forEach(player => {
+    player.querySelector('button')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/R1MOzNQ1OKI?autoplay=1';
+      iframe.title = 'Vídeo institucional — Multiforte Segurança';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.className = 'absolute inset-0 h-full w-full border-0';
+      player.replaceChildren(iframe);
+      iframe.focus();
+    }, { once: true });
+  });
+</script>

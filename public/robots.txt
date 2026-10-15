@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.multiforteseguranca.com.br/sitemap.xml

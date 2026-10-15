@@ -78,12 +78,13 @@
       "se destaca como referência em \n",
       "controle de acesso e demais facilities.  "
     ],
-    "image": "/images/header-multiforte.webp",
-    "seal": "/images/selo-15-anos-3d.webp",
+    "image": "/images/optimized/header.5eccc0885b.webp",
+    "seal": "/images/optimized/selo-15-anos.699d824998.webp",
     "cta": {
       "label": "Saiba mais ",
       "href": "#quem-somos"
-    }
+    },
+    "avif": "/images/optimized/header.74b83db7f5.avif"
   },
   "services": [
     {
@@ -91,35 +92,35 @@
       "prompt": "SAIBA MAIS  <br>\n︾",
       "detailTitle": "SEGURANÇA PATRIMONIAL",
       "html": "Especializada em proteger o seu patrimônio de forma eficiente\nconfiável. <br>Contamos com uma equipe altamente treinada e qual da,\ncomposta por profissionais experientes no setor de segurança.",
-      "image": "/images/imgi_59_seguranca_patrimonial_multiforte_021.webp"
+      "image": "/images/optimized/servico-1.252e9f6659.webp"
     },
     {
       "title": "SEGURANÇA<br>ARMADA",
       "prompt": "SAIBA MAIS  <br>\n︾",
       "detailTitle": "SEGURANÇA ARMADA",
       "html": "Nossa empresa é devidamente registrada e homologada pela\nPolícia Federal.<br> Atuamos com eficácia na segurança do\npatrimônio. <br>Nossos profissionais passam por treinamentos e\nreciclagem constantemente, sendo acompanhados por nossa\nequipe operacional de supervisão.",
-      "image": "/images/imgi_61_seguranca_armada_multiforte_02.webp"
+      "image": "/images/optimized/servico-2.642a43ed8c.webp"
     },
     {
       "title": "AGENTE DE <br>PORTARIA",
       "prompt": "SAIBA MAIS  <br>\n︾",
       "detailTitle": "AGENTE DE PORTARIA",
       "html": "Portaria com câmeras e monitoramento 24 horas é essencial\nara garantir a segurança e controle de acesso em diversos ambientes.<br>\nCom a presença do agente e o auxílio das câmeras de vigilância, é possível identificar e autorizar a entrada de pessoas de forma eficiente.<br>\nO monitoramento constante das câmeras permite uma resposta\nrápida a incidentes, enquanto as gravações servem como evidências\nem Caso de investigação.<br> Essa combinação de recursos tecnológicos e a presença humana capacitada garantem a proteção e a tranquilidade\nde todos envolvidos.",
-      "image": "/images/imgi_63_agente_portaria_multiforte_02-e1707712967726.webp"
+      "image": "/images/optimized/servico-3.70cbfc017f.webp"
     },
     {
       "title": "RECEPCIONISTA",
       "prompt": "SAIBA MAIS  <br>\n︾",
       "detailTitle": "RECEPCIONISTA",
       "html": "Contamos com uma equipe de profissionais treinados\ne capacitados para realizar o controle de acesso e\ndirecionamento adequado de visitantes, sempre com\ncordialidade.",
-      "image": "/images/imgi_65_recepcionista_multiforte_02.webp"
+      "image": "/images/optimized/servico-4.04cdc1a6e5.webp"
     }
   ],
   "about": {
     "eyebrow": "SOBRE NÓS",
     "title": "Provendo a melhor composição de serviços e tecnologias para atender as demandas de nossos clientes.",
     "html": "<p>O GRUPO MULTIFORTE desde 2010 honra seu compromisso de proteção à vida e à propriedade privada, contando com uma visão de prestação de serviço eficaz, empreendedora e diferenciada.</p>",
-    "image": "/images/imgi_67_quem-somos-multiforte-scaled.webp",
+    "image": "/images/optimized/sobre-nos.00875a3120.webp",
     "counters": [
       {
         "number": 120,
@@ -156,55 +157,55 @@
   },
   "logos": [
     {
-      "image": "/images/imgi_5_800px-Coat_of_arms_of_the_Brazilian_Federal_Police.svg-768x987.png.webp",
+      "image": "/images/optimized/cliente-1.b1e0155791.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_6_presidentes-oab-2021-1-768x313.png.webp",
+      "image": "/images/optimized/cliente-2.f44a993bd8.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_7_2023_br_govfederal_marcaoficial_rgb-e1704406550578-768x360.png.webp",
+      "image": "/images/optimized/cliente-3.4000505851.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_8_Caixa_Economica_Federal_logo.svg-768x176.png.webp",
+      "image": "/images/optimized/cliente-4.84739279f8.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_9_sefaz-mt-secretaria-de-fazenda-do-estado-de-mato-grosso-e1704406954640.png.webp",
+      "image": "/images/optimized/cliente-5.ec0099e4a7.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_10_229323229161945-e1704407110504.jpg.webp",
+      "image": "/images/optimized/cliente-6.67c9335c0a.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_11_Volkswagen_Logo_till_1995.svg-768x768.png.webp",
+      "image": "/images/optimized/cliente-7.4fff82371e.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_12_cropped-naturafrig_logo_header.png-1.webp",
+      "image": "/images/optimized/cliente-8.1ea850cb38.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_13_hospital-geral.png.webp",
+      "image": "/images/optimized/cliente-9.11f5a75c3a.webp",
       "name": ""
     },
     {
-      "image": "/images/imgi_14_verana_multiforte.webp",
+      "image": "/images/optimized/cliente-10.709607773d.webp",
       "name": "VERANA"
     },
     {
-      "image": "/images/imgi_15_magalu_multiforte.webp",
+      "image": "/images/optimized/cliente-11.7d418732b9.webp",
       "name": "MAGALU"
     },
     {
-      "image": "/images/imgi_16_destilaria_novo_milenio_logo.webp",
+      "image": "/images/optimized/cliente-12.cea4fd9e2e.webp",
       "name": "destilaria"
     },
     {
-      "image": "/images/imgi_17_Escudo_ufmt.webp",
+      "image": "/images/optimized/cliente-13.9509e1c257.webp",
       "name": "UFMT"
     }
   ],
