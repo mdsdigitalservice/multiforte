@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Barlow";
+  src: url("/fonts/barlow-black-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Barlow", "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
 @theme {
   --color-brand: #a71924;
   --color-ink: #111318;
