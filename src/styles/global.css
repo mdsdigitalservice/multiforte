@@ -87,10 +87,13 @@
 }
 
 
-.type-section,.type-clients,.type-cta { font-size:clamp(1.75rem,3vw,2.5rem); font-weight:900; letter-spacing:-.04em; }
+.type-section,.type-clients,.type-cta { text-transform:uppercase; font-size:clamp(1.75rem,3vw,2.5rem); font-weight:900; letter-spacing:-.04em; }
 .type-lead {font-size:clamp(1.25rem,2.2vw,1.7rem); font-weight:700; line-height:1.4;}
 .type-portfolio {font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.05em;line-height:1;}
 .type-body {font-size:1rem;line-height:1.8;}
 .type-stat {font-family:"Montserrat",Arial,sans-serif;font-size:2rem;font-weight:900;line-height:1.1;}
 .type-stat-label {font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;}
 .eyebrow {font-family:"Montserrat",Arial,sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#E30613;}
+
+/* Shared heading hierarchy for home-page sections. */
+.section-title { margin-top:.75rem; max-width:42rem; color:#000; font-family:"Montserrat",Arial,sans-serif; font-size:clamp(1.75rem,3vw,2.5rem); font-weight:900; letter-spacing:-.04em; line-height:1.15; text-transform:uppercase; text-wrap:balance; }
