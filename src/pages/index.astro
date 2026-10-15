@@ -19,6 +19,7 @@ import { navigation, site } from '../data/site';
     <Hero />
     <CallToAction />
     <Services />
+    <Clients />
     <About />
     <MediaSection />
     <section class="container-site grid items-center gap-10 py-16 md:grid-cols-[.8fr_1.2fr] md:py-24 lg:gap-24">
@@ -26,7 +27,6 @@ import { navigation, site } from '../data/site';
       <div><h2 class="text-3xl font-semibold tracking-tight md:text-4xl">{data.report.title}</h2><div class="prose-site mt-6" set:html={data.report.html} /><a href={data.report.cta.href} class="button mt-7">{data.report.cta.label}<span aria-hidden="true" class="ml-6">↗</span></a></div>
     </section>
     <Portfolio />
-    <Clients />
     <CallToAction dark />
   </main>
   <Footer />

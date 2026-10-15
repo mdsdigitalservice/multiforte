@@ -1,12 +1,107 @@
 ---
 import data from '../data/wordpress.json';
 ---
-<section id="avaliacoes" class="container-site py-16 md:py-24">
-  <h2 class="mb-10 text-3xl font-semibold tracking-tight md:text-5xl">{data.clientsTitle}</h2>
-  <div class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-200 sm:grid-cols-3 lg:grid-cols-5">
-    {data.logos.map(logo => <div class="flex min-h-36 items-center justify-center bg-white p-8"><img src={logo.image} alt={logo.name} loading="lazy" decoding="async" class="max-h-20 w-full object-contain" /></div>)}
+<section id="avaliacoes" class="container-site py-16 md:py-24" aria-labelledby="clients-title" data-clients>
+  <div class="mb-10 flex flex-wrap items-center justify-between gap-6">
+    <h2 id="clients-title" class="text-3xl font-semibold tracking-tight md:text-5xl">{data.clientsTitle}</h2>
+    <div class="flex items-center gap-2">
+      <button type="button" data-prev class="client-arrow" aria-label="Cliente anterior" aria-controls="clients-track">←</button>
+      <button type="button" data-next class="client-arrow" aria-label="Próximo cliente" aria-controls="clients-track">→</button>
+      <button type="button" data-pause class="ml-2 min-h-12 px-2 text-sm underline underline-offset-4" aria-pressed="false">Pausar</button>
+    </div>
+  </div>
+  <div class="clients-viewport overflow-hidden rounded-2xl border border-zinc-200 bg-white" aria-roledescription="carrossel" aria-label="Clientes atendidos">
+    <div id="clients-track" class="clients-track">
+      {data.logos.map(logo => <div class="client-slide"><img src={logo.image} alt={logo.name} loading="lazy" decoding="async" class="max-h-24 w-full object-contain" /></div>)}
+    </div>
   </div>
 </section>
+<style>
+  .clients-viewport { --visible: 1; touch-action: pan-y; }
+  .clients-track { display: flex; will-change: transform; }
+  .client-slide { flex: 0 0 calc(100% / var(--visible)); min-width: 0; min-height: 180px; padding: 32px; display: flex; align-items: center; justify-content: center; }
+  .client-arrow { width: 48px; height: 48px; border: 1px solid #d4d4d8; border-radius: 50%; font-size: 24px; cursor: pointer; }
+  .client-arrow:hover { background: #a71924; border-color: #a71924; color: white; }
+  @media (min-width: 640px) { .clients-viewport { --visible: 3; } }
+  @media (min-width: 1024px) { .clients-viewport { --visible: 5; } }
+</style>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-clients]');
+  if (root) {
+    const viewport = root.querySelector<HTMLElement>('.clients-viewport')!;
+    const track = root.querySelector<HTMLElement>('.clients-track')!;
+    const pause = root.querySelector<HTMLButtonElement>('[data-pause]')!;
+    const originals = Array.from(track.children);
+    const count = originals.length;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = count;
+    let moving = false;
+    let paused = reduced.matches;
+    let hovered = false;
+    let focused = false;
+    let timer: ReturnType<typeof setTimeout>;
+    let finishTimer: ReturnType<typeof setTimeout>;
+    const clone = (node: Element) => {
+      const copy = node.cloneNode(true) as HTMLElement;
+      copy.setAttribute('aria-hidden', 'true');
+      return copy;
+    };
+    track.prepend(...originals.map(clone));
+    track.append(...originals.map(clone));
+    function position(animate = false) {
+      const visible = Number(getComputedStyle(viewport).getPropertyValue('--visible'));
+      track.style.transition = animate && !reduced.matches ? 'transform 1600ms ease-in-out' : 'none';
+      track.style.transform = `translateX(${-index * viewport.clientWidth / visible}px)`;
+    }
+    function schedule() {
+      clearTimeout(timer);
+      if (!paused && !hovered && !focused && !document.hidden) timer = setTimeout(() => move(1), 6500);
+    }
+    function finish() {
+      clearTimeout(finishTimer);
+      if (!moving) return;
+      index = count + ((index - count) % count + count) % count;
+      position();
+      moving = false;
+      schedule();
+    }
+    function move(direction: number) {
+      if (moving || !count) return;
+      clearTimeout(timer);
+      moving = true;
+      index += direction;
+      position(true);
+      finishTimer = setTimeout(finish, reduced.matches ? 0 : 1700);
+    }
+    track.addEventListener('transitionend', event => { if (event.propertyName === 'transform') finish(); });
+    root.querySelector('[data-prev]')!.addEventListener('click', () => move(-1));
+    root.querySelector('[data-next]')!.addEventListener('click', () => move(1));
+    function syncPause() {
+      pause.textContent = paused ? 'Reproduzir' : 'Pausar';
+      pause.setAttribute('aria-pressed', String(paused));
+      schedule();
+    }
+    pause.addEventListener('click', () => { paused = !paused; syncPause(); });
+    root.addEventListener('mouseenter', () => { hovered = true; schedule(); });
+    root.addEventListener('mouseleave', () => { hovered = false; schedule(); });
+    root.addEventListener('focusin', () => { focused = true; schedule(); });
+    root.addEventListener('focusout', event => { focused = root.contains(event.relatedTarget as Node); schedule(); });
+    document.addEventListener('visibilitychange', schedule);
+    reduced.addEventListener('change', () => { paused = reduced.matches; syncPause(); });
+    let touchX = 0;
+    let touchY = 0;
+    viewport.addEventListener('touchstart', event => { touchX = event.touches[0].clientX; touchY = event.touches[0].clientY; clearTimeout(timer); }, { passive: true });
+    viewport.addEventListener('touchend', event => {
+      const dx = event.changedTouches[0].clientX - touchX;
+      const dy = event.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) move(dx < 0 ? 1 : -1);
+      else schedule();
+    }, { passive: true });
+    new ResizeObserver(() => { finish(); position(); }).observe(viewport);
+    position();
+    syncPause();
+  }
+</script>
 <section hidden={data.reviews.hidden} class="container-site pb-24">
   <h2 class="mb-10 text-3xl font-semibold">{data.reviews.title}</h2>
   <div class="grid gap-6 md:grid-cols-3">{data.reviews.items.map(review => <figure class="rounded-2xl bg-white p-8"><blockquote class="leading-relaxed" set:html={review.html} /><figcaption class="mt-6"><strong>{review.name}</strong><span class="mt-1 block text-sm text-zinc-500">{review.job}</span></figcaption></figure>)}</div>
