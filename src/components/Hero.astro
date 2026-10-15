@@ -8,10 +8,10 @@ const hero = data.hero;
   <div class="container-site grid items-end gap-12 py-20 md:grid-cols-[1fr_auto] md:py-28">
     <div class="max-w-3xl">
       <div class="mb-7 h-1 w-16 bg-brand"></div>
-      <h1 class="text-7xl font-black leading-none tracking-[-.06em] sm:text-8xl lg:text-[10rem]">{hero.lines[0]}</h1>
-      <p class="mt-4 text-xl text-zinc-200 md:text-2xl">{hero.lines[1]}</p>
-      <p class="mt-1 text-4xl font-bold uppercase tracking-tight md:text-6xl">{hero.lines[2]}</p>
-      <p class="mt-7 text-lg leading-relaxed text-zinc-200 md:text-xl">{hero.lines[3]}<br /><strong class="font-semibold text-white">{hero.lines[4]}</strong></p>
+      <h1 class="type-display">{hero.lines[0]}</h1>
+      <p class="mt-4 type-hero-sub text-zinc-200">{hero.lines[1]}</p>
+      <p class="mt-1 type-hero-name">{hero.lines[2]}</p>
+      <p class="mt-7 type-lead text-zinc-200">{hero.lines[3]}<br /><strong class="font-semibold text-white">{hero.lines[4]}</strong></p>
       <a href={hero.cta.href} class="mt-9 inline-flex min-h-12 items-center gap-8 border-b border-white/60 py-2 font-semibold">{hero.cta.label}<span aria-hidden="true">↗</span></a>
     </div>
     <img src={hero.seal} width="150" height="150" alt="" class="hidden h-auto w-36 opacity-90 md:block lg:w-44" />

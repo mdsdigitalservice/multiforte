@@ -7,7 +7,7 @@ import data from '../data/wordpress.json';
       <div class="relative aspect-[4/5] overflow-hidden bg-ink">
         <img src={item.image} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/10"></div>
-        <div class="absolute inset-x-0 bottom-0 p-6 text-white"><span aria-hidden="true" class="mb-4 block text-xs font-bold tracking-widest text-white/60">0{index + 1}</span><h2 class="text-3xl font-bold leading-tight tracking-tight" set:html={item.title} /></div>
+        <div class="absolute inset-x-0 bottom-0 p-6 text-white"><span aria-hidden="true" class="mb-4 block text-xs font-bold tracking-widest text-white/60">0{index + 1}</span><h2 class="type-service" set:html={item.title} /></div>
       </div>
       <details class="service-detail group p-6">
         <summary class="cursor-pointer text-sm font-semibold text-brand"><span set:html={item.prompt} /></summary>

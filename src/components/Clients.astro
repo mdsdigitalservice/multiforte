@@ -3,7 +3,7 @@ import data from '../data/wordpress.json';
 ---
 <section id="avaliacoes" class="container-site py-16 md:py-24" aria-labelledby="clients-title" data-clients>
   <div class="mb-10 flex flex-wrap items-center justify-between gap-6">
-    <h2 id="clients-title" class="text-3xl font-semibold tracking-tight md:text-5xl">{data.clientsTitle}</h2>
+    <h2 id="clients-title" class="type-clients">{data.clientsTitle}</h2>
     <div class="flex items-center gap-2">
       <button type="button" data-prev class="client-arrow" aria-label="Cliente anterior" aria-controls="clients-track">←</button>
       <button type="button" data-next class="client-arrow" aria-label="Próximo cliente" aria-controls="clients-track">→</button>
@@ -103,6 +103,6 @@ import data from '../data/wordpress.json';
   }
 </script>
 <section hidden={data.reviews.hidden} class="container-site pb-24">
-  <h2 class="mb-10 text-3xl font-semibold">{data.reviews.title}</h2>
+  <h2 class="mb-10 type-clients">{data.reviews.title}</h2>
   <div class="grid gap-6 md:grid-cols-3">{data.reviews.items.map(review => <figure class="rounded-2xl bg-white p-8"><blockquote class="leading-relaxed" set:html={review.html} /><figcaption class="mt-6"><strong>{review.name}</strong><span class="mt-1 block text-sm text-zinc-500">{review.job}</span></figcaption></figure>)}</div>
 </section>

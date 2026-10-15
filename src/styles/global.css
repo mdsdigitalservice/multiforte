@@ -1,24 +1,22 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Barlow";
-  src: url("/fonts/barlow-black-latin.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-}
+@font-face { font-family: "Barlow"; src: url("/fonts/barlow-400-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("/fonts/barlow-500-latin.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("/fonts/barlow-600-latin.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("/fonts/barlow-700-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("/fonts/barlow-800-latin.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("/fonts/barlow-900-latin.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
 
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: "Barlow", "Segoe UI", Arial, sans-serif;
-  font-weight: 900;
-  overflow-wrap: anywhere;
-}
+@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-400-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-500-latin.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-600-latin.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("/fonts/barlow-condensed-700-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 @theme {
   --color-brand: #a71924;
   --color-ink: #111318;
   --color-paper: #f5f4f1;
-  --font-sans: "Segoe UI", Arial, sans-serif;
+  --font-sans: "Barlow", Arial, sans-serif;
 }
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
@@ -53,4 +51,34 @@
   .footer-copy a { @apply text-zinc-200 underline underline-offset-4; }
   .service-detail summary::marker { color: #a71924; }
   .service-detail summary br { display: none; }
+}
+
+/* Typography follows the original Elementor hierarchy; layouts stay unchanged. */
+body { font-size: 1.2rem; font-weight: 400; line-height: 1.5; }
+button, input, select, textarea { font-family: inherit; }
+:is(h1, h2, h3, h4, h5, h6) { font-family: var(--font-sans); font-weight: 600; line-height: 1.2; letter-spacing: normal; overflow-wrap: break-word; }
+.type-display { font-size: 5rem; font-weight: 900; line-height: 1.05; letter-spacing: normal; }
+.type-hero-sub { font-size: 2.7rem; font-weight: 600; line-height: 1.15; letter-spacing: -1.3px; }
+.type-hero-name { font-size: 2rem; font-weight: 900; line-height: 1.15; text-transform: uppercase; letter-spacing: normal; }
+.type-section { font-size: 2.5rem; font-weight: 800; line-height: 1.2; text-transform: uppercase; letter-spacing: -1.3px; }
+.type-portfolio { font-size: 3.1rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; letter-spacing: normal; }
+.type-clients { font-size: 1.5rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; letter-spacing: normal; }
+.type-lead { font-size: 1.3rem; font-weight: 600; line-height: 1.3; letter-spacing: normal; }
+.type-body, .prose-site, .wordpress-content { font-size: 1.2rem; font-weight: 400; line-height: 1.5; }
+.type-cta { font-size: 2.5rem; font-weight: 600; line-height: 1.2; text-transform: uppercase; letter-spacing: .6px; }
+.type-service { font-size: 2rem; font-weight: 800; line-height: 1.15; letter-spacing: normal; }
+.service-detail { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 1.3rem; line-height: 1.3; }
+.service-detail h3 { font-family: inherit; font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
+.service-detail summary { font-size: 1.2rem; font-weight: 400; text-transform: uppercase; }
+.service-detail :where(p, div) { line-height: 1.3; }
+.button { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 1.3rem; font-weight: 500; line-height: 1.2; text-transform: uppercase; letter-spacing: normal; }
+.type-stat { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 5.5rem; font-weight: 600; line-height: 1; letter-spacing: normal; }
+.type-stat-label { font-family: "Barlow Condensed", "Barlow", sans-serif; font-size: 1.2rem; font-weight: 400; }
+.wordpress-content :is(h1, h2) { font-size: 2rem; font-weight: 600; line-height: 1.2; }
+.wordpress-content h3 { font-size: 1.5rem; font-weight: 600; }
+@media (min-width: 768px) {
+ .type-display { font-size: 5.2rem; }
+ .type-hero-name { font-size: 3.1rem; }
+ .type-lead { font-size: 1.5rem; }
+ .type-clients { font-size: 2rem; }
 }
