@@ -2,7 +2,10 @@
 import data from '../data/wordpress.json';
 ---
 <section id="clientes" class="container-site py-16 md:py-24" aria-labelledby="clients-title" data-clients>
-  <h2 id="clients-title" class="type-section mb-10 uppercase">{data.clientsTitle.toLocaleUpperCase('pt-BR')}</h2>
+  <div class="mb-10">
+    <p class="eyebrow">{data.clientsTitle.toLocaleUpperCase('pt-BR')}</p>
+    <h2 id="clients-title" class="type-section mt-3 max-w-2xl text-black">Quem confia na nossa proteção</h2>
+  </div>
   <div class="clients-viewport overflow-hidden rounded-2xl border border-zinc-200 bg-white" aria-roledescription="carrossel" aria-label="Clientes atendidos">
     <div id="clients-track" class="clients-track">
       {data.logos.map(logo => <div class="client-slide"><img src={logo.image} alt={logo.name} loading="lazy" decoding="async" class="client-logo" /></div>)}
