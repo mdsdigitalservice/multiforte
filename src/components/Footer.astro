@@ -1,13 +1,77 @@
 ---
-import { site } from '../data/site';
 import data from '../data/wordpress.json';
+const location = data.footer.socials.find(social => social.label === 'Localização');
+const socials = data.footer.socials.filter(social => social.label !== 'Localização');
 ---
-<footer id="rodape" class="bg-ink py-14 text-white"><div class="container-site">
-  <div class="grid gap-10 border-b border-white/10 pb-10 md:grid-cols-[1fr_1.4fr_1fr]">
-    <div><a href="/" aria-label={site.name}><img src={site.logo} alt={site.name} width="300" height="72" loading="lazy" class="h-auto w-48" /></a><div class="mt-6 flex flex-wrap gap-4 text-xs text-zinc-300">{data.footer.socials.map(social => <a href={social.href} class="py-2 hover:text-white">{social.label}</a>)}</div></div>
-    <div class="space-y-4 text-sm leading-relaxed text-zinc-300"><p>{data.footer.address}</p><p><a href="tel:+556530544456" class="inline-block py-1 hover:text-white">{data.footer.phones[0]}</a><br /><a href={data.footer.cta.href} class="inline-block py-1 hover:text-white">{data.footer.phones[1]}</a></p></div>
-    <nav aria-label="Rodapé" class="flex flex-col items-start gap-4 text-sm">{data.footer.links.map(link => <a href={link.href} class="py-1 hover:text-red-300">{link.label}</a>)}<a href="/#home" class="py-1" aria-label="Voltar ao início">↑</a></nav>
+<footer id="rodape" class="site-footer">
+  <div class="footer-invitation">
+    <div class="container-site footer-invitation-inner">
+      <h2>{data.cta.title}</h2>
+      <a href={data.footer.cta.href} class="button footer-proposal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.6a8.5 8.5 0 1 1 16.1-4.2Z"/><path d="M8.3 7.4c-.4.2-.8.8-.7 1.6.4 2.8 3 5.5 5.8 6 .8.1 1.5-.3 1.8-.8l.5-1-2-1-.8.9c-1.4-.5-2.5-1.6-3-3l.8-.7-.9-2Z"/></svg>
+        {data.footer.cta.label}
+      </a>
+    </div>
   </div>
-  <div class="footer-copy mt-7 hidden text-xs leading-relaxed text-zinc-400 md:block" set:html={data.footer.copyrightDesktop} />
-  <div class="footer-copy mt-7 text-xs leading-relaxed text-zinc-400 md:hidden" set:html={data.footer.copyrightMobile} />
-</div></footer>
+  <div class="footer-contacts">
+    <div class="container-site footer-contacts-inner">
+      <div class="footer-location">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+        <a href={location?.href}>{data.footer.address}</a>
+      </div>
+      <div class="footer-phones">
+        <a href="tel:+556530544456">{data.footer.phones[0]}</a>
+        <a href={data.footer.cta.href} class="footer-whatsapp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.6a8.5 8.5 0 1 1 16.1-4.2Z"/><path d="M8.3 7.4c-.4.2-.8.8-.7 1.6.4 2.8 3 5.5 5.8 6 .8.1 1.5-.3 1.8-.8l.5-1-2-1-.8.9c-1.4-.5-2.5-1.6-3-3l.8-.7-.9-2Z"/></svg>
+          {data.footer.phones[1]}
+        </a>
+      </div>
+      <nav class="footer-socials" aria-label="Redes sociais">{socials.map(social => <a href={social.href}>{social.label}</a>)}</nav>
+    </div>
+  </div>
+  <div class="container-site footer-bottom">
+    <nav class="footer-legal" aria-label="Rodapé">{data.footer.links.map(link => <a href={link.href}><span aria-hidden="true">✓</span>{link.label}</a>)}</nav>
+    <div class="footer-copyright" set:html={data.footer.copyrightDesktop} />
+    <a href="/#home" class="footer-top" aria-label="Voltar ao início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></a>
+  </div>
+</footer>
+<style>
+  .site-footer { background:white; color:#5c5c5c; }
+  .site-footer a { color:inherit; text-decoration:none; }
+  .site-footer a:hover { color:#E30613; }
+  .footer-invitation { background:#090909; color:white; padding-block:64px; }
+  .footer-invitation-inner { display:flex; justify-content:center; align-items:center; gap:24px; }
+  .footer-invitation h2 { font-family:"Montserrat",Arial,sans-serif; font-size:clamp(1.4rem,2.4vw,2rem); font-weight:700; text-transform:uppercase; line-height:1.3; letter-spacing:-.025em; margin:0; }
+  .footer-proposal { flex-shrink:0; gap:8px; text-transform:uppercase; color:white!important; font-size:.85rem; }
+  .footer-proposal svg { width:22px; height:22px; }
+  .footer-contacts { background:radial-gradient(ellipse at 50% 100%,#e4e4e4 0%,#f6f6f6 45%,#fff 76%); }
+  .footer-contacts-inner { display:grid; grid-template-columns:1fr auto; align-items:center; gap:20px 32px; padding-top:44px; padding-bottom:28px; }
+  .footer-location { display:flex; align-items:center; gap:12px; font-size:.85rem; font-weight:600; line-height:1.6; }
+  .footer-location svg { flex-shrink:0; width:26px; height:30px; }
+  .footer-phones { display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:20px; font-weight:600; font-size:1rem; }
+  .footer-whatsapp { display:inline-flex; align-items:center; gap:10px; }
+  .footer-whatsapp svg { width:26px; height:26px; }
+  .footer-socials { grid-column:1/-1; display:flex; justify-content:center; flex-wrap:wrap; gap:20px; font-size:.75rem; }
+  .footer-bottom { display:grid; grid-template-columns:230px 1fr 44px; align-items:center; gap:24px; padding-block:24px; font-size:.8rem; line-height:1.6; }
+  .footer-legal { display:flex; flex-direction:column; gap:2px; }
+  .footer-legal a { display:flex; gap:8px; align-items:center; }
+  .footer-copyright { text-align:center; }
+  .footer-copyright :global(p) { margin:0; }
+  .footer-copyright :global(a) { color:inherit; text-decoration:none; }
+  .footer-copyright :global(a:hover) { color:#E30613; }
+  .footer-top { display:flex; width:44px; height:44px; align-items:center; justify-content:center; border-radius:50%; }
+  .footer-top:hover { background:#f4f4f4; }
+  .footer-top svg { width:22px; height:22px; }
+  @media(max-width:767px) {
+    .footer-invitation { padding-block:40px; }
+    .footer-invitation-inner { flex-direction:column; gap:20px; text-align:center; }
+    .footer-contacts-inner { grid-template-columns:1fr; padding-block:32px; gap:24px; }
+    .footer-location { justify-content:center; text-align:center; }
+    .footer-phones { justify-content:center; gap:16px; font-size:.95rem; }
+    .footer-socials { gap:24px; }
+    .footer-bottom { grid-template-columns:1fr 44px; gap:20px 12px; padding-block:24px; }
+    .footer-legal { grid-column:1; }
+    .footer-top { grid-column:2; grid-row:1; }
+    .footer-copyright { grid-column:1/-1; grid-row:2; text-align:left; font-size:.75rem; }
+  }
+</style>
