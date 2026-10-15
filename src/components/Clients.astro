@@ -2,28 +2,27 @@
 import data from '../data/wordpress.json';
 ---
 <section id="clientes" class="container-site py-16 md:py-24" aria-labelledby="clients-title" data-clients>
-  <div class="mb-10 flex flex-wrap items-center justify-between gap-6">
-    <h2 id="clients-title" class="type-clients">{data.clientsTitle}</h2>
-    <div class="flex items-center gap-2">
-      <button type="button" data-prev class="client-arrow" aria-label="Cliente anterior" aria-controls="clients-track">←</button>
-      <button type="button" data-next class="client-arrow" aria-label="Próximo cliente" aria-controls="clients-track">→</button>
-      <button type="button" data-pause class="ml-2 min-h-12 px-2 text-sm underline underline-offset-4" aria-pressed="false">Pausar</button>
-    </div>
-  </div>
+  <h2 id="clients-title" class="type-section mb-10 uppercase">{data.clientsTitle.toLocaleUpperCase('pt-BR')}</h2>
   <div class="clients-viewport overflow-hidden rounded-2xl border border-zinc-200 bg-white" aria-roledescription="carrossel" aria-label="Clientes atendidos">
     <div id="clients-track" class="clients-track">
-      {data.logos.map(logo => <div class="client-slide"><img src={logo.image} alt={logo.name} loading="lazy" decoding="async" class="max-h-24 w-full object-contain" /></div>)}
+      {data.logos.map(logo => <div class="client-slide"><img src={logo.image} alt={logo.name} loading="lazy" decoding="async" class="client-logo" /></div>)}
     </div>
+  </div>
+  <div class="mt-6 flex items-center justify-center gap-3" role="group" aria-label="Controles do carrossel de clientes">
+    <button type="button" data-prev class="client-arrow" aria-label="Cliente anterior" aria-controls="clients-track">←</button>
+    <button type="button" data-next class="client-arrow" aria-label="Próximo cliente" aria-controls="clients-track">→</button>
+    <button type="button" data-pause class="ml-2 min-h-12 px-2 text-sm underline underline-offset-4" aria-pressed="false">Pausar</button>
   </div>
 </section>
 <style>
   .clients-viewport { --visible: 1; touch-action: pan-y; }
   .clients-track { display: flex; will-change: transform; }
-  .client-slide { flex: 0 0 calc(100% / var(--visible)); min-width: 0; min-height: 180px; padding: 32px; display: flex; align-items: center; justify-content: center; }
+  .client-slide { flex: 0 0 calc(100% / var(--visible)); min-width: 0; min-height: 240px; padding: 24px; display: flex; align-items: center; justify-content: center; }
+  .client-logo { width: 100%; height: 176px; object-fit: contain; }
   .client-arrow { width: 48px; height: 48px; border: 1px solid #d4d4d8; border-radius: 50%; font-size: 24px; cursor: pointer; }
   .client-arrow:hover { background: #E30613; border-color: #E30613; color: white; }
-  @media (min-width: 640px) { .clients-viewport { --visible: 3; } }
-  @media (min-width: 1024px) { .clients-viewport { --visible: 5; } }
+  @media (min-width: 640px) { .clients-viewport { --visible: 2; } }
+  @media (min-width: 1024px) { .clients-viewport { --visible: 4; } }
 </style>
 <script>
   const root = document.querySelector<HTMLElement>('[data-clients]');
