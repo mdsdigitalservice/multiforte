@@ -14,7 +14,7 @@ import data from '../data/wordpress.json';
 import seo from '../data/seo.json';
 import { navigation, site } from '../data/site';
 ---
-<BaseLayout title={seo["/"].title} description={site.description} canonicalPath="/" image={data.hero.image} preloadImage={data.hero.avif}>
+<BaseLayout title={seo["/"].title} description={site.description} canonicalPath="/" image={data.hero.image} preloadImage={data.hero.avif} mobilePreloadImage={data.hero.mobileAvif}>
   <Header links={navigation} />
   <main id="conteudo">
     <Hero />

@@ -3,6 +3,7 @@ import data from '../data/wordpress.json';
 ---
 <section id="home" class="hero-banner" aria-labelledby="hero-title">
  <picture>
+ <source media="(max-width: 480px)" srcset={data.hero.mobileAvif} type="image/avif" />
  <source srcset={data.hero.avif} type="image/avif" />
  <img src={data.hero.image} alt="Vigilante uniformizado da Multiforte em frente à sede em Cuiabá" width="1712" height="624" loading="eager" fetchpriority="high" decoding="async" class="hero-photo" />
  </picture>

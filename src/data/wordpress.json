@@ -84,7 +84,8 @@
       "label": "Saiba mais ",
       "href": "#quem-somos"
     },
-    "avif": "/images/optimized/header.74b83db7f5.avif"
+    "avif": "/images/optimized/header.74b83db7f5.avif",
+    "mobileAvif": "/images/optimized/header-mobile.67ff315b53.avif"
   },
   "services": [
     {
