@@ -1,51 +1,52 @@
 @import "tailwindcss";
+/* Preloaded fonts never replace visible text after first paint. */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/inter-400.06c504d11b.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/inter-500.89a71cfdc6.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/montserrat-400.4b358158a4.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/montserrat-600.1b980c17e1.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/montserrat-700.25a22bad45.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 800;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/montserrat-800.66d1448f30.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
+  font-display: optional;
   src: url(/fonts/optimized/montserrat-900.28032ffe4c.woff2) format('woff2');
 }
 @theme { --color-brand: #E30613; --color-ink: #0A1E3C; --color-paper: #ffffff; --font-sans: "Inter", Arial, sans-serif; }
