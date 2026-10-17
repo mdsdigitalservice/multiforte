@@ -24,8 +24,6 @@ const socialImage = image ? new URL(image, site.origin).href : undefined;
     {preloadImage && <link rel="preload" href={preloadImage} media={mobilePreloadImage ? "(min-width: 481px)" : undefined} as="image" type="image/avif" fetchpriority="high" />}
     <link rel="preload" href="/fonts/optimized/inter-400.06c504d11b.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/optimized/montserrat-900.28032ffe4c.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/optimized/montserrat-700.25a22bad45.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/optimized/montserrat-800.66d1448f30.woff2" as="font" type="font/woff2" crossorigin />
 
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}
