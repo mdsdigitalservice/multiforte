@@ -28,7 +28,7 @@ const { links } = Astro.props;
   .header-bar { width:100%; max-width:1280px; height:clamp(80px,20vw,112px); margin-inline:auto; padding-inline:clamp(12px,2.5vw,32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
   .header-logo { display:block; width:clamp(210px,57vw,340px); max-width:calc(100% - 74px); flex-shrink:0; }
   .header-logo img { display:block; width:100%; height:auto; }
-  summary { display:flex; align-items:center; justify-content:center; width:52px; height:52px; list-style:none; border:0; border-radius:8px; color:white; }
+  summary { display:flex; align-items:center; justify-content:center; width:52px; height:52px; list-style:none; border:0; border-radius:var(--radius-control); color:white; }
   summary::-webkit-details-marker { display:none; }
   summary::marker { content:""; }
   summary:hover { background:rgba(255,255,255,.08); }
@@ -38,7 +38,7 @@ const { links } = Astro.props;
   details[open] .menu-icon span:nth-child(2) { opacity:0; }
   details[open] .menu-icon span:nth-child(3) { transform:translateY(-8px) rotate(-45deg); }
   nav { position:absolute; inset:100% 0 auto; display:flex; flex-direction:column; gap:4px; max-height:calc(100dvh - clamp(80px,20vw,112px)); overflow-y:auto; padding:16px max(24px,calc((100vw - 1216px)/2)) 28px; background:rgba(5,5,5,.94); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px); border-top:1px solid rgba(255,255,255,.12); }
-  nav a:not(.button) { padding:14px 12px; border-radius:8px; font-family:"Montserrat",Arial,sans-serif; font-size:1rem; font-weight:600; color:white; text-decoration:none; }
+  nav a:not(.button) { padding:14px 12px; border-radius:var(--radius-control); font-family:"Montserrat",Arial,sans-serif; font-size:1rem; font-weight:600; color:white; text-decoration:none; }
   nav a:not(.button):hover { background:rgba(255,255,255,.08); }
   .header-contact { align-self:flex-start; gap:16px; margin-top:12px; }
   .site-header-space { height:clamp(80px,20vw,112px); }

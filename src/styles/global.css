@@ -49,20 +49,20 @@
   font-display: optional;
   src: url(/fonts/optimized/montserrat-900.d749da53fa.woff2) format('woff2');
 }
-@theme { --color-brand: #E30613; --color-ink: #0A1E3C; --color-paper: #ffffff; --font-sans: "Inter", Arial, sans-serif; }
+@theme { --color-brand: #E30613; --color-ink: #0A1E3C; --color-paper: #ffffff; --font-sans: "Inter", Arial, sans-serif; --radius-control:14px; }
 @layer base {
  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
  body { margin:0; background:white; color:#0A1E3C; font-family:var(--font-sans); font-size:1rem; line-height:1.65; }
  h1,h2,h3,h4,h5,h6 { font-family:"Montserrat",Arial,sans-serif; font-weight:800; line-height:1.15; overflow-wrap:break-word; }
  img { max-width:100%; height:auto; }
  button,input,select,textarea { font:inherit; }
- button,summary { cursor:pointer; }
+ button,summary { cursor:pointer; border-radius:var(--radius-control); }
  :focus-visible { outline:3px solid #E30613; outline-offset:5px; }
  @media(prefers-reduced-motion:reduce) { html {scroll-behavior:auto} *,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important;} }
 }
 @layer components {
  .container-site { @apply mx-auto w-full max-w-7xl px-6 md:px-10; }
- .button { @apply inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-red-800; font-family:"Montserrat",Arial,sans-serif; }
+ .button { @apply inline-flex min-h-12 items-center justify-center bg-brand px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-red-800; font-family:"Montserrat",Arial,sans-serif; border-radius:var(--radius-control); }
  .button-navy { background:#0A1E3C; } .button-navy:hover {background:#132E5C;}
  .button-outline { background:transparent; color:#0A1E3C; border:1px solid #d1d5db; } .button-outline:hover {background:#f3f4f6;}
  .prose-site { @apply space-y-5 text-base leading-relaxed text-zinc-600; }
@@ -80,7 +80,7 @@
   .wordpress-content li a { overflow-wrap: anywhere; }
   .bio-content { @apply text-center; }
   .bio-content ul { @apply list-none p-0; }
-  .bio-content li a { @apply my-3 block rounded-xl border border-zinc-200 bg-white px-6 py-4 no-underline transition-colors hover:border-brand; }
+  .bio-content li a { @apply my-3 block rounded-[14px] border border-zinc-200 bg-white px-6 py-4 no-underline transition-colors hover:border-brand; }
   .bio-content svg { @apply hidden; }
   .footer-copy a { @apply text-zinc-200 underline underline-offset-4; }
   .service-detail summary::marker { color: #a71924; }
