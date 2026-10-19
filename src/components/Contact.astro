@@ -16,6 +16,24 @@ import data from '../data/wordpress.json';
   event.preventDefault(); if (!form.reportValidity()) return;
   const values = new FormData(form);
   const message = `Olá! Vim do site da Multiforte e gostaria de solicitar um orçamento.\nNome: ${values.get('nome')}\nEmpresa/Condomínio: ${values.get('empresa')}\nWhatsApp: ${values.get('telefone')}`;
-  window.location.assign(`https://wa.me/5565984027828?text=${encodeURIComponent(message)}`);
+  const destination = `https://wa.me/5565984027828?text=${encodeURIComponent(message)}`;
+  // This measures a validated request to open WhatsApp, not a message sent or a sale.
+  // Never put the form values or the destination URL (which contains them) in analytics.
+  let opened = false;
+  const openWhatsApp = () => {
+   if (opened) return;
+   opened = true;
+   window.location.assign(destination);
+  };
+  const analyticsWindow = window as Window & { dataLayer?: Record<string, unknown>[] };
+  analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+  window.setTimeout(openWhatsApp, 800);
+  analyticsWindow.dataLayer.push({
+   event: 'mf_whatsapp_form',
+   contact_method: 'whatsapp',
+   form_id: 'proposal-form',
+   eventCallback: openWhatsApp,
+   eventTimeout: 700,
+  });
  });
 </script>
