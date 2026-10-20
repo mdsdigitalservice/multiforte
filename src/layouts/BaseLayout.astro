@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import { site } from '../data/site';
+import CookieConsent from '../components/CookieConsent.astro';
+import consentBootstrap from '../scripts/consent-bootstrap.js?raw';
 interface Props {
   title: string;
   description?: string;
@@ -20,13 +22,8 @@ const socialImage = image ? new URL(image, site.origin).href : undefined;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <!-- Existing Multiforte container: GA4 and Ads are managed in GTM, not duplicated here. -->
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      if (['multiforteseguranca.com.br', 'www.multiforteseguranca.com.br'].includes(window.location.hostname)) {
-        (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WFVNC959');
-      }
-    </script>
+    <!-- Consent defaults run before GTM. Optional tags load only after a choice. -->
+    <script is:inline set:html={consentBootstrap} />
     {mobilePreloadImage && !mobilePreloadImage.startsWith("data:") && <link rel="preload" href={mobilePreloadImage} media="(max-width: 480px)" as="image" type="image/avif" fetchpriority="high" />}
     {preloadImage && <link rel="preload" href={preloadImage} media={mobilePreloadImage ? "(min-width: 481px)" : undefined} as="image" type="image/avif" fetchpriority="high" />}
     <link rel="preload" href="/fonts/optimized/inter-400.ca6c397b35.woff2" as="font" type="font/woff2" crossorigin />
@@ -45,10 +42,11 @@ const socialImage = image ? new URL(image, site.origin).href : undefined;
   <body>
     <a href="#conteudo" class="sr-only fixed left-4 top-4 z-50 rounded bg-white p-4 focus:not-sr-only">Pular para o conteúdo</a>
     <slot />
+    <CookieConsent />
     <script is:inline>
       document.addEventListener('click', function(event) {
         var link = event.target instanceof Element ? event.target.closest('a[href]') : null;
-        if (link && link.getAttribute('href') === 'tel:+556530544456') {
+        if (link && link.getAttribute('href') === 'tel:+556530544456' && window.mfConsent?.allowsAnalytics()) {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: 'mf_phone_click', contact_method: 'phone' });
         }

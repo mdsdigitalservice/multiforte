@@ -26,6 +26,8 @@ import data from '../data/wordpress.json';
    window.location.assign(destination);
   };
   const analyticsWindow = window as Window & { dataLayer?: Record<string, unknown>[] };
+  const consent = (window as Window & { mfConsent?: { allowsAnalytics(): boolean } }).mfConsent;
+  if (!consent?.allowsAnalytics()) { openWhatsApp(); return; }
   analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
   window.setTimeout(openWhatsApp, 800);
   analyticsWindow.dataLayer.push({

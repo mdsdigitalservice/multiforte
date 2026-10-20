@@ -1,0 +1,93 @@
+<section id="cookie-banner" class="cookie-banner" role="region" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-copy">
+    <p class="cookie-eyebrow">SUA PRIVACIDADE</p>
+    <h2 id="cookie-title">Você escolhe os cookies.</h2>
+    <p>Usamos cookies opcionais para entender as visitas e medir nossos anúncios. Você pode aceitar, rejeitar ou escolher quais permitir. <a href="/politica-de-privacidade/">Política de privacidade</a></p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" data-cookie-reject>Rejeitar opcionais</button>
+    <button type="button" data-cookie-settings>Personalizar</button>
+    <button type="button" class="cookie-accept" data-cookie-accept>Aceitar todos</button>
+  </div>
+</section>
+<dialog id="cookie-preferences" class="cookie-dialog" aria-labelledby="cookie-dialog-title" aria-describedby="cookie-description">
+  <form method="dialog">
+    <div class="cookie-dialog-heading"><p class="cookie-eyebrow">SUA PRIVACIDADE</p><button class="cookie-close" aria-label="Fechar preferências" value="cancel">×</button></div>
+    <h2 id="cookie-dialog-title">Preferências de cookies</h2>
+    <p id="cookie-description">Escolha o que você permite. Telefone, WhatsApp e formulário funcionam com os cookies opcionais desativados.</p>
+    <div class="cookie-option"><div><strong>Necessários</strong><p>Guardam sua escolha neste navegador por até 180 dias.</p></div><span class="cookie-required">Sempre ativos</span></div>
+    <label class="cookie-option" for="cookie-analytics"><div><strong>Estatísticas</strong><p>Permitem ao Google Analytics medir visitas e cliques nos canais de contato.</p></div><input type="checkbox" id="cookie-analytics" /></label>
+    <label class="cookie-option" for="cookie-advertising"><div><strong>Publicidade</strong><p>Permitem ao Google Ads medir conversões e personalizar anúncios.</p></div><input type="checkbox" id="cookie-advertising" /></label>
+    <a class="cookie-policy" href="/politica-de-privacidade/">Ler política de privacidade</a>
+    <div class="cookie-dialog-actions"><button type="button" data-cookie-reject>Rejeitar opcionais</button><button type="button" class="cookie-accept" id="cookie-save">Salvar preferências</button></div>
+  </form>
+</dialog>
+<button type="button" class="cookie-fallback" id="cookie-fallback" data-cookie-settings hidden>Preferências de cookies</button>
+<script>
+  type ConsentChoice = { analytics: boolean; advertising: boolean };
+  const consent = (window as Window & { mfConsent?: { get(): ConsentChoice | null; save(analytics: boolean, advertising: boolean): void } }).mfConsent;
+  const banner = document.querySelector<HTMLElement>('#cookie-banner');
+  const dialog = document.querySelector<HTMLDialogElement>('#cookie-preferences');
+  const analytics = document.querySelector<HTMLInputElement>('#cookie-analytics');
+  const advertising = document.querySelector<HTMLInputElement>('#cookie-advertising');
+  const fallback = document.querySelector<HTMLElement>('#cookie-fallback');
+  let returnFocus: HTMLElement | null = null;
+  if (consent && banner && dialog && analytics && advertising) {
+    banner.hidden = !!consent.get();
+    if (fallback) fallback.hidden = !!document.querySelector('footer [data-cookie-settings]');
+    const save = (allowAnalytics: boolean, allowAdvertising: boolean) => {
+      consent.save(allowAnalytics, allowAdvertising);
+      banner.hidden = true;
+      if (dialog.open) dialog.close();
+    };
+    document.querySelectorAll<HTMLElement>('[data-cookie-settings]').forEach(button => button.addEventListener('click', () => {
+      returnFocus = button;
+      const choice = consent.get();
+      analytics.checked = choice?.analytics ?? false;
+      advertising.checked = choice?.advertising ?? false;
+      if (!dialog.open) dialog.showModal();
+    }));
+    document.querySelectorAll('[data-cookie-accept]').forEach(button => button.addEventListener('click', () => save(true, true)));
+    document.querySelectorAll('[data-cookie-reject]').forEach(button => button.addEventListener('click', () => save(false, false)));
+    document.querySelector('#cookie-save')?.addEventListener('click', () => save(analytics.checked, advertising.checked));
+    dialog.addEventListener('close', () => {
+      if (returnFocus && !returnFocus.closest('[hidden]')) returnFocus.focus();
+    });
+  }
+</script>
+<style>
+  [hidden] { display:none !important; }
+  .cookie-banner,.cookie-dialog { color:#18212d; background:#fff; font-family:inherit; }
+  .cookie-banner { position:fixed; z-index:1000; bottom:20px; left:20px; right:20px; max-width:1160px; margin-inline:auto; padding:24px; border:1px solid #e5e7eb; border-radius:20px; box-shadow:0 12px 50px #10182726; display:flex; align-items:center; gap:24px; }
+  .cookie-copy { flex:1; }
+  .cookie-eyebrow { margin:0 0 5px; font-size:10px; font-weight:800; letter-spacing:.14em; color:#c10510; }
+  h2 { margin:0 0 8px; font-size:20px; font-weight:750; line-height:1.25; }
+  p { margin:0; font-size:13px; line-height:1.65; color:#596170; }
+  a { text-decoration:underline; text-underline-offset:3px; }
+  .cookie-actions { display:flex; flex-wrap:wrap; gap:8px; max-width:440px; }
+  button { min-height:44px; padding:10px 16px; border:1px solid #cbd0d8; border-radius:var(--radius-control,14px); background:#fff; color:#263140; font:inherit; font-size:12px; font-weight:650; cursor:pointer; }
+  button:hover { background:#f3f4f6; }
+  button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid #155eef; outline-offset:3px; }
+  .cookie-accept { background:#e30613; color:white; border-color:#e30613; }
+  .cookie-accept:hover { background:#be0611; }
+  .cookie-dialog { width:min(560px,calc(100% - 32px)); max-height:calc(100dvh - 40px); margin:auto; overflow:auto; padding:28px; border:1px solid #dfe3e9; border-radius:22px; box-shadow:0 20px 80px #0003; }
+  .cookie-dialog::backdrop { background:#0e1117a6; }
+  .cookie-dialog-heading { display:flex; align-items:center; justify-content:space-between; }
+  .cookie-close { font-size:24px; padding:0; width:44px; border:0; }
+  .cookie-option { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0; border-bottom:1px solid #e5e7eb; }
+  .cookie-option strong { font-size:14px; }
+  .cookie-option p { font-size:12px; margin-top:4px; }
+  .cookie-option input { width:24px; height:24px; flex-shrink:0; accent-color:#e30613; }
+  .cookie-required { font-size:11px; white-space:nowrap; color:#596170; }
+  .cookie-policy { display:inline-block; margin-top:18px; font-size:12px; }
+  .cookie-dialog-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .cookie-fallback { position:fixed; z-index:990; left:16px; bottom:16px; box-shadow:0 3px 15px #0002; }
+  @media(max-width:767px) {
+    .cookie-banner { display:block; bottom:12px; left:12px; right:12px; padding:20px; max-height:calc(100dvh - 24px); overflow:auto; }
+    .cookie-actions { display:grid; grid-template-columns:1fr 1fr; max-width:none; margin-top:16px; }
+    .cookie-actions .cookie-accept { grid-column:1/-1; }
+    .cookie-dialog { padding:22px; }
+    .cookie-dialog-actions { display:grid; grid-template-columns:1fr; }
+    h2 { font-size:18px; }
+  }
+</style>

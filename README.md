@@ -94,3 +94,19 @@ python3 scripts/verify-migration.py /caminho/export.xml
 ```
 
 O importador foi escrito para a estrutura deste site; IDs de widgets e templates identificam os blocos originais. Mudanças estruturais no Elementor exigem ajustar o importador. O XML bruto não fica no repositório público.
+
+## Consentimento de cookies
+
+`src/scripts/consent-bootstrap.js` define os quatro sinais do Consent Mode v2 como
+`denied` antes de carregar qualquer contêiner. A GTM só carrega no domínio de
+produção após autorização de estatísticas ou publicidade. As três tags GA4
+exigem `analytics_storage`; a conversão Ads e o vinculador exigem `ad_storage`
+nas configurações adicionais da GTM. Essas regras devem acompanhar futuras tags.
+
+O visitante pode aceitar, rejeitar ou personalizar; as preferências são guardadas
+por 180 dias neste navegador. Mudanças em um contêiner já carregado recarregam a
+página e removem os cookies Google próprios acessíveis da categoria revogada.
+O link no rodapé reabre as preferências. Nenhuma informação do formulário é
+incluída nos eventos; os contatos continuam disponíveis sem consentimento.
+
+Verificação da lógica: `node --test tests/consent.test.mjs`.

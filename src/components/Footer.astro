@@ -25,6 +25,7 @@ const socials = data.footer.socials.filter(social => social.label !== 'Localiza�
     <nav class="footer-legal" aria-label="Rodapé">{data.footer.links.map(link => <a href={link.href}><span aria-hidden="true">✓</span>{link.label}</a>)}</nav>
     <div class="footer-copyright" set:html={data.footer.copyrightDesktop} />
     <a href="/#home" class="footer-top" aria-label="Voltar ao início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></a>
+    <button type="button" class="footer-cookie-settings" data-cookie-settings>Preferências de cookies</button>
   </div>
 </footer>
 <style>
@@ -48,6 +49,7 @@ const socials = data.footer.socials.filter(social => social.label !== 'Localiza�
   .footer-legal { display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; gap:8px 20px; }
   .footer-legal a { display:flex; gap:8px; align-items:center; white-space:nowrap; }
   .footer-copyright { text-align:center; }
+  .footer-cookie-settings { grid-column:1/-1; justify-self:center; cursor:pointer; color:inherit; font:inherit; font-size:.75rem; text-decoration:underline; text-underline-offset:3px; padding:8px 12px; border-radius:var(--radius-control); }
   .footer-copyright :global(p) { margin:0; }
   .footer-copyright :global(a) { color:inherit; text-decoration:none; }
   .footer-copyright :global(a:hover) { color:#E30613; }
