@@ -15,6 +15,76 @@ interface Props {
 const { title, description = site.description, canonicalPath, image, noindex = false, preloadImage, mobilePreloadImage } = Astro.props;
 const canonical = canonicalPath ? new URL(canonicalPath, site.origin).href : undefined;
 const socialImage = image ? new URL(image, site.origin).href : undefined;
+// Business data describes the services and contacts visible on the home page.
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.multiforteseguranca.com.br/#empresa",
+      "name": "Multiforte Segurança",
+      "url": "https://www.multiforteseguranca.com.br/",
+      "description": "Empresa de segurança patrimonial, controle de acesso e facilities em Cuiabá, Mato Grosso.",
+      "telephone": "+556530544456",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua das Rosas, 350, Jardim Cuiabá",
+        "addressLocality": "Cuiabá",
+        "addressRegion": "MT",
+        "postalCode": "78043-128",
+        "addressCountry": "BR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Orçamentos pelo WhatsApp",
+        "telephone": "+5565984027828",
+        "url": "https://wa.me/5565984027828",
+        "availableLanguage": "pt-BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/multiforteseguranca/",
+        "https://www.facebook.com/multiforteseguranca"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços da Multiforte Segurança",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://www.multiforteseguranca.com.br/#seguranca-patrimonial"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://www.multiforteseguranca.com.br/#agente-portaria"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.multiforteseguranca.com.br/#seguranca-patrimonial",
+      "name": "Segurança patrimonial",
+      "serviceType": "Segurança patrimonial",
+      "provider": {
+        "@id": "https://www.multiforteseguranca.com.br/#empresa"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.multiforteseguranca.com.br/#agente-portaria",
+      "name": "Agente de portaria",
+      "serviceType": "Portaria e controle de acesso",
+      "provider": {
+        "@id": "https://www.multiforteseguranca.com.br/#empresa"
+      }
+    }
+  ]
+};
+
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -22,6 +92,7 @@ const socialImage = image ? new URL(image, site.origin).href : undefined;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    {canonicalPath === '/' && !noindex && <script is:inline type="application/ld+json" set:html={JSON.stringify(businessSchema).replace(/</g, '\\u003c')} />}
     <!-- Consent defaults run before GTM. Optional tags load only after a choice. -->
     <script is:inline set:html={consentBootstrap} />
     {mobilePreloadImage && !mobilePreloadImage.startsWith("data:") && <link rel="preload" href={mobilePreloadImage} media="(max-width: 480px)" as="image" type="image/avif" fetchpriority="high" />}
