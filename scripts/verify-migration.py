@@ -13,7 +13,7 @@ class Document(HTMLParser):
   a=dict(a)
   if t in ['style','script','svg']:self.skip+=1
   if t=='h1':self.h1+=1
-  if t=='title':self.title=True
+  if t=='title' and not self.skip:self.title=True
   if t=='link' and a.get('rel')=='canonical':self.canonical=a.get('href','')
   if 'id' in a:self.ids.add(a['id'])
   for k in ['href','src']:
@@ -21,7 +21,7 @@ class Document(HTMLParser):
  def handle_startendtag(self,t,a):self.handle_starttag(t,a)
  def handle_endtag(self,t):
   if t in ['style','script','svg']:self.skip=max(0,self.skip-1)
-  if t=='title':self.title=False
+  if t=='title' and not self.skip:self.title=False
  def handle_data(self,d):
   if self.title:self.titleText+=d
   if not self.skip:self.words.append(d)
@@ -40,7 +40,7 @@ for p in pages:
   parts=urlsplit(u)
   if parts.scheme or parts.netloc or not parts.path.startswith('/'):continue
   path=unquote(parts.path)
-  if path.endswith(('.pdf','.webp','.jpg','.png','.svg','.css','.js','.ttf','.woff2')):
+  if path.endswith(('.pdf','.webp','.avif','.jpg','.png','.svg','.css','.js','.ttf','.woff2')):
    if not (ROOT/'dist'/path.lstrip('/')).is_file():errors.append('Missing resource '+path)
   elif path in {p['path'] for p in pages}:pass
   elif path=='/avalie-nos':pass  # Existing plugin redirect, handled by _redirects after discovery.
