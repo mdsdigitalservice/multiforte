@@ -4,18 +4,18 @@ const groups = [
     title: 'Segurança patrimonial',
     description: 'Três caminhos visuais para apresentar a presença e o cuidado da equipe.',
     items: [
-      { id: 'seguranca-branco', label: '01', style: 'Fundo branco', image: '/outubro/seguranca-branco.webp', caption: 'Sempre vigilantes. Cuidado com as pessoas. Atenção ao patrimônio. Há 15 anos, a Multiforte atua para proteger o que importa na rotina de empresas e condomínios. Conheça nossas soluções de segurança. #Multiforte #SegurançaPatrimonial #15Anos' },
-      { id: 'seguranca-vermelho', label: '02', style: 'Vermelho em destaque', image: '/outubro/seguranca-vermelho.webp', caption: 'Estar presente é cuidar de cada detalhe. A Multiforte une profissionais, atenção e responsabilidade para apoiar a segurança patrimonial da sua operação. Fale com nossa equipe e solicite uma proposta. #Multiforte #SegurançaPatrimonial #15Anos' },
-      { id: 'seguranca-foto', label: '03', style: 'Fotográfica escura', image: '/outubro/seguranca-foto.webp', caption: 'Segurança é feita por pessoas preparadas e atentas à sua rotina. Com 15 anos de história, a Multiforte valoriza quem está presente em cada posto. Conheça nossas soluções. #Multiforte #SegurançaPatrimonial #15Anos' },
+      { id: 'seguranca-branco', label: '01', style: 'Fundo branco', image: '/outubro/seguranca-branco-v2.webp', caption: 'Sempre vigilantes. Cuidado com as pessoas. Atenção ao patrimônio. A Multiforte atua para proteger o que importa na rotina de empresas e condomínios. Conheça nossas soluções de segurança. #Multiforte #SegurançaPatrimonial' },
+      { id: 'seguranca-vermelho', label: '02', style: 'Vermelho em destaque', image: '/outubro/seguranca-vermelho-v2.webp', caption: 'Estar presente é cuidar de cada detalhe. A Multiforte une profissionais, atenção e responsabilidade para apoiar a segurança patrimonial da sua operação. Fale com nossa equipe e solicite uma proposta. #Multiforte #SegurançaPatrimonial' },
+      { id: 'seguranca-foto', label: '03', style: 'Fotográfica escura', image: '/outubro/seguranca-foto-v2.webp', caption: 'Segurança é feita por pessoas preparadas e atentas à sua rotina. A Multiforte valoriza quem está presente em cada posto. Conheça nossas soluções. #Multiforte #SegurançaPatrimonial' },
     ],
   },
   {
     title: 'Facilities · limpeza',
     description: 'Três abordagens para mostrar o cuidado com ambientes e pessoas.',
     items: [
-      { id: 'facilities-branco', label: '04', style: 'Fundo branco', image: '/outubro/facilities-branco.webp', caption: 'Limpeza que valoriza sua empresa. O cuidado com os ambientes contribui para uma rotina mais acolhedora para equipes, clientes e visitantes. Conheça os serviços de facilities da Multiforte. #Multiforte #Facilities #LimpezaProfissional' },
-      { id: 'facilities-vermelho', label: '05', style: 'Vermelho em destaque', image: '/outubro/facilities-vermelho.webp', caption: 'Cuidado em cada espaço. A limpeza das áreas comuns faz parte da experiência de quem circula pelo seu condomínio. Converse com a Multiforte sobre a necessidade da sua operação. #Multiforte #Facilities #LimpezaProfissional' },
-      { id: 'facilities-foto', label: '06', style: 'Fotográfica escura', image: '/outubro/facilities-foto.webp', caption: 'Quem cuida faz a diferença. Por trás de cada ambiente bem cuidado, existe o trabalho de profissionais comprometidos com a rotina das pessoas. Solicite uma proposta de facilities. #Multiforte #Facilities #LimpezaProfissional' },
+      { id: 'facilities-branco', label: '04', style: 'Fundo branco', image: '/outubro/facilities-branco-v2.webp', caption: 'Limpeza que valoriza sua empresa. O cuidado com os ambientes contribui para uma rotina mais acolhedora para equipes, clientes e visitantes. Conheça os serviços de facilities da Multiforte. #Multiforte #Facilities #LimpezaProfissional' },
+      { id: 'facilities-vermelho', label: '05', style: 'Vermelho em destaque', image: '/outubro/facilities-vermelho-v2.webp', caption: 'Cuidado em cada espaço. A limpeza das áreas comuns faz parte da experiência de quem circula pelo seu condomínio. Converse com a Multiforte sobre a necessidade da sua operação. #Multiforte #Facilities #LimpezaProfissional' },
+      { id: 'facilities-foto', label: '06', style: 'Fotográfica escura', image: '/outubro/facilities-foto-v2.webp', caption: 'Quem cuida faz a diferença. Por trás de cada ambiente bem cuidado, existe o trabalho de profissionais comprometidos com a rotina das pessoas. Solicite uma proposta de facilities. #Multiforte #Facilities #LimpezaProfissional' },
     ],
   },
 ];
@@ -47,7 +47,7 @@ const groups = [
       <div class="system" id="system" role="status" aria-live="polite">Carregando avaliações…</div>
       {groups.map(group => <section class="group" aria-label={group.title}>
         <div class="grouphead"><div><h2>{group.title}</h2><p>{group.description}</p></div><div class="count">03 propostas</div></div>
-        <div class="grid">{group.items.map(item => <article class="card" data-id={item.id} data-revision="1">
+        <div class="grid">{group.items.map(item => <article class="card" data-id={item.id} data-revision="2">
           <div class="imagewrap"><img src={item.image} width="1122" height="1402" loading="lazy" alt={`Proposta ${item.label}: ${group.title}, ${item.style}`} /><button class="expand" type="button" data-image={item.image} aria-label={`Ampliar proposta ${item.label}`}>Ampliar ↗</button></div>
           <div class="cardbody"><div class="cardtop"><h3>{item.label} · {item.style}</h3><span class="badge" data-status="pending">Pendente</span></div>
             <a class="download" href={item.image} download={`multiforte-${item.id}.webp`}>Baixar arte ↓</a>
