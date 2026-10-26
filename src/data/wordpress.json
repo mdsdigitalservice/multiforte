@@ -96,11 +96,12 @@
       "image": "/images/optimized/servico-1.252e9f6659.webp"
     },
     {
-      "title": "SEGURANÇA<br>ARMADA",
+      "title": "MONITOR DE<br>POSTURA",
       "prompt": "SAIBA MAIS  <br>\n︾",
-      "detailTitle": "SEGURANÇA ARMADA",
-      "html": "Nossa empresa é devidamente registrada e homologada pela\nPolícia Federal.<br> Atuamos com eficácia na segurança do\npatrimônio. <br>Nossos profissionais passam por treinamentos e\nreciclagem constantemente, sendo acompanhados por nossa\nequipe operacional de supervisão.",
-      "image": "/images/optimized/servico-2.642a43ed8c.webp"
+      "detailTitle": "MONITOR DE POSTURA",
+      "html": "Acompanhamento preventivo das áreas comuns e das rotinas de acesso, com rondas e apoio operacional para empresas e condomínios.",
+      "image": "/images/optimized/monitor-de-postura.4b4751b80e.webp",
+      "imageAlt": "Equipe da Multiforte com motocicleta de apoio operacional"
     },
     {
       "title": "AGENTE DE <br>PORTARIA",
@@ -110,11 +111,12 @@
       "image": "/images/optimized/servico-3.70cbfc017f.webp"
     },
     {
-      "title": "RECEPCIONISTA",
+      "title": "LIMPEZA",
       "prompt": "SAIBA MAIS  <br>\n︾",
-      "detailTitle": "RECEPCIONISTA",
-      "html": "Contamos com uma equipe de profissionais treinados\ne capacitados para realizar o controle de acesso e\ndirecionamento adequado de visitantes, sempre com\ncordialidade.",
-      "image": "/images/optimized/servico-4.04cdc1a6e5.webp"
+      "detailTitle": "LIMPEZA",
+      "html": "Serviços de limpeza e conservação para empresas e condomínios, com rotinas voltadas à higiene, organização e cuidado dos ambientes.",
+      "image": "/images/optimized/limpeza.64c9da070a.webp",
+      "imageAlt": "Profissionais de limpeza com equipamentos de conservação"
     }
   ],
   "about": {
