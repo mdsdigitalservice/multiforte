@@ -1,0 +1,99 @@
+<style is:global>
+  @media (prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine) {
+    .mf-motion #servicos article,.mf-motion #avaliacoes figure { transition:box-shadow .35s ease,border-color .35s ease; }
+    .mf-motion #servicos article:hover,.mf-motion #avaliacoes figure:hover { border-color:rgb(227 6 19 / 25%); box-shadow:0 16px 40px rgb(10 30 60 / 10%); }
+    .mf-motion #servicos article img,.mf-motion #portfolio img { transition:transform .7s cubic-bezier(.2,.65,.3,1); }
+    .mf-motion #servicos article:hover img { transform:scale(1.045); }
+    .mf-motion #portfolio a:hover img { transform:translateY(-6px) scale(1.02); }
+    .mf-motion .button { transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease; }
+    .mf-motion .button:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgb(10 30 60 / 16%); }
+    .mf-motion .button:active { transform:translateY(0); }
+    .mf-motion .footer-socials a { transition:transform .25s ease,background-color .25s ease; }
+    .mf-motion .footer-socials a:hover { transform:translateY(-4px); }
+  }
+</style>
+<script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let stopMotion = () => {};
+  function startMotion() {
+    stopMotion();
+    if (reducedMotion.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
+    const controller = new AbortController();
+    const animations = new Set<Animation>();
+    document.documentElement.classList.add('mf-motion');
+    const compact = window.matchMedia('(max-width:767px)');
+    const targets = new Set<HTMLElement>();
+    const selectors = [
+      'main section:not(#home) .eyebrow', 'main section:not(#home) .section-title',
+      'main section:not(#home) .prose-site', '#servicos article', '#avaliacoes figure',
+      '#quem-somos .relative', '#quem-somos dl > div', '#portfolio a[aria-label]',
+      '#portfolio .text-center > p:not(.eyebrow)', '[data-institutional-video]',
+      'main > section > img', '#contato form', '#contato .grid > div > p:not(.eyebrow)',
+      '.footer-contacts-inner', '.footer-bottom > *',
+      'main .wordpress-content > h2', 'main .wordpress-content > h3',
+      'main .wordpress-content > p', 'main .wordpress-content > figure'
+    ];
+    document.querySelectorAll<HTMLElement>(selectors.join(',')).forEach(el => targets.add(el));
+    function animate(el: HTMLElement, hero = false) {
+      const siblings = Array.from(el.parentElement?.children || []).filter(node => targets.has(node as HTMLElement));
+      const stagger = Math.min(Math.max(siblings.indexOf(el), 0), 3) * (compact.matches ? 55 : 90);
+      const photo = el.matches('#quem-somos .relative, #portfolio a[aria-label], [data-institutional-video], main > section > img');
+      const distance = compact.matches ? 16 : 28;
+      const from: Keyframe = { transform:photo ? `translateY(${distance}px) scale(.975)` : `translateY(${hero ? 10 : distance}px)`, opacity:hero ? 1 : 0 };
+      const animation = el.animate([from, { transform:'none', opacity:1 }], {
+        duration:compact.matches ? 600 : 850, delay:hero ? 0 : stagger,
+        easing:'cubic-bezier(.2,.65,.3,1)', fill:'backwards'
+      });
+      animations.add(animation);
+      el.dataset.motion = 'revealed';
+      animation.finished.then(() => animations.delete(animation)).catch(() => animations.delete(animation));
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        animate(entry.target as HTMLElement);
+      });
+    }, { threshold:.08, rootMargin:'0px 0px -24px 0px' });
+    targets.forEach(el => {
+      // Already passed content must stay still when opening a deep link.
+      if (el.getBoundingClientRect().bottom < 0) return;
+      el.dataset.motion = 'ready';
+      observer.observe(el);
+    });
+    document.querySelectorAll<HTMLElement>('.hero-kicker, .hero-copy h1, .hero-description, .hero-actions, .hero-stats, .hero-seal').forEach(el => {
+      if (el.getBoundingClientRect().bottom > 0 && el.getBoundingClientRect().top < innerHeight) animate(el, true);
+    });
+    const hero = document.querySelector<HTMLElement>('#home');
+    const photo = hero?.querySelector<HTMLElement>('.hero-photo');
+    const desktop = window.matchMedia('(min-width:1024px) and (pointer:fine)');
+    let frame = 0;
+    let heroVisible = false;
+    function updateParallax() {
+      frame = 0;
+      if (!photo || !hero || !desktop.matches || !heroVisible) return;
+      const offset = Math.max(-18, Math.min(18, -hero.getBoundingClientRect().top * .045));
+      photo.style.transform = `translate3d(0,${offset}px,0) scale(1.06)`;
+    }
+    function scroll() {
+      if (heroVisible && desktop.matches && !frame) frame = requestAnimationFrame(updateParallax);
+    }
+    const heroObserver = new IntersectionObserver(entries => { heroVisible = entries[0].isIntersecting; if (heroVisible) scroll(); });
+    if (hero) heroObserver.observe(hero);
+    window.addEventListener('scroll', scroll, { passive:true, signal:controller.signal });
+    window.addEventListener('resize', () => {
+      if (!desktop.matches && photo) photo.style.removeProperty('transform');
+      scroll();
+    }, { passive:true, signal:controller.signal });
+    stopMotion = () => {
+      controller.abort(); observer.disconnect(); heroObserver.disconnect(); cancelAnimationFrame(frame);
+      animations.forEach(animation => animation.cancel()); animations.clear();
+      photo?.style.removeProperty('transform');
+      document.documentElement.classList.remove('mf-motion');
+    };
+  }
+  startMotion();
+  reducedMotion.addEventListener('change', startMotion);
+  window.addEventListener('pagehide', () => stopMotion());
+  window.addEventListener('pageshow', event => { if (event.persisted) startMotion(); });
+</script>
