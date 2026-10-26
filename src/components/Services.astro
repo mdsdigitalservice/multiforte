@@ -5,12 +5,9 @@ const descriptions = ['Equipe treinada e qualificada para proteger seu patrimôn
 <section id="servicos" class="bg-zinc-50 py-16 md:py-20"><div class="container-site">
  <p class="eyebrow">Nossos serviços</p><h2 class="section-title">Proteção completa para seu patrimônio</h2>
  <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">{data.services.map((item,i) => <article class="overflow-hidden rounded-[20px] border border-zinc-100 bg-white shadow-sm">
-  <div class="aspect-[5/4] overflow-hidden"><img src={item.image} alt={'imageAlt' in item ? String(item.imageAlt) : item.title.replace(/<br\s*\/?>(\s*)/gi,' ')} width="500" height="400" loading="lazy" decoding="async" class:list={['h-full w-full object-cover object-top', { 'service-image-patrol': item.detailTitle === 'MONITOR DE POSTURA' }]} /></div>
+  <div class="aspect-[5/4] overflow-hidden"><img src={item.image} alt={'imageAlt' in item ? String(item.imageAlt) : item.title.replace(/<br\s*\/?>(\s*)/gi,' ')} width="500" height="400" loading="lazy" decoding="async" class="h-full w-full object-cover object-top" /></div>
   <div class="p-6"><h3 class="text-lg font-bold" set:html={item.title.replace(/<br\s*\/?>(\s*)/gi,' ')} /><p class="mt-3 text-sm text-zinc-600">{descriptions[i]}</p>
    <details class="service-detail mt-5"><summary class="text-sm font-bold text-brand">Saiba mais</summary><div class="mt-4 text-sm leading-relaxed text-zinc-600" set:html={item.html} /></details>
   </div></article>)}</div>
 </div></section>
 
-<style>
- .service-image-patrol { transform:scale(1.42); transform-origin:64% 70%; }
-</style>
