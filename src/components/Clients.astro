@@ -15,7 +15,7 @@ const position = (index: number) => {
     <div class="client-carousel" role="region" aria-label="Clientes atendidos" aria-roledescription="carrossel">
       <div id="clients-track" class="clients-track" tabindex="0" aria-label="Use as setas do teclado ou deslize para conhecer os clientes">
         {data.logos.map((logo, index) => <div class="client-slide" data-position={position(index)} role="group" aria-roledescription="slide" aria-label={`${index + 1} de ${count}`} aria-hidden={index !== 0}>
-          <div class="client-logo-panel"><img src={logo.image} alt={logo.name} width="300" height="190" loading="lazy" decoding="async" draggable="false" /></div>
+          <div class="client-logo-panel"><img src={logo.image} alt={logo.name || `Logo do cliente ${index + 1}`} width="300" height="190" loading="lazy" decoding="async" draggable="false" /></div>
         </div>)}
       </div>
       <div class="carousel-controls">
