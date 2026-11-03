@@ -1,5 +1,6 @@
 ---
-const groups = [
+type PublicationGroup = { title: string; description: string; items: { id: string; label: string; style: string; image: string; caption: string; revision?: number }[] };
+const groups: PublicationGroup[] = [
   {
     title: 'Segurança patrimonial',
     description: 'Três caminhos visuais para apresentar a presença e o cuidado da equipe.',
@@ -19,7 +20,7 @@ const groups = [
     ],
   },
 ];
-const novemberGroups = [
+const novemberGroups: PublicationGroup[] = [
   {
     title: 'Segurança e acesso',
     description: 'A importância de proteger espaços e organizar a entrada, sem pessoas nas imagens.',
