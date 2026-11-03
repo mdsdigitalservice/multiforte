@@ -2,9 +2,14 @@ const allowedIds = new Set([
   'seguranca-branco', 'seguranca-vermelho', 'seguranca-foto',
   'facilities-branco', 'facilities-vermelho', 'facilities-foto',
   'nov-seguranca-patrimonial', 'nov-acesso-empresa', 'nov-acesso-condominio',
-  'nov-portaria', 'nov-facilities',
+  'nov-portaria', 'nov-facilities', 'nov-monitoramento',
+  'nov-anterior-acesso-condominio', 'nov-anterior-portaria-corporativa', 'nov-anterior-monitoramento',
 ]);
-const novemberIds = new Set(['nov-seguranca-patrimonial', 'nov-acesso-empresa', 'nov-acesso-condominio', 'nov-portaria', 'nov-facilities']);
+const novemberIds = new Set([
+  'nov-seguranca-patrimonial', 'nov-acesso-empresa', 'nov-acesso-condominio',
+  'nov-portaria', 'nov-facilities', 'nov-monitoramento',
+  'nov-anterior-acesso-condominio', 'nov-anterior-portaria-corporativa', 'nov-anterior-monitoramento',
+]);
 const allowedStatuses = new Set(['draft', 'approved', 'changes']);
 const headers = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' };
 const json = (data, status = 200) => new Response(JSON.stringify(data), { status, headers });
