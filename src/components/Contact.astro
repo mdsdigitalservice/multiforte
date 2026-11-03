@@ -7,6 +7,9 @@ import data from '../data/wordpress.json';
   <label class="block text-sm font-medium" for="contact-name">Seu nome<input id="contact-name" name="nome" autocomplete="name" required maxlength="120" class="mt-2 block min-h-12 w-full rounded-full border border-zinc-200 px-5 py-3" /></label>
   <label class="block text-sm font-medium" for="contact-company">Empresa ou condomínio<input id="contact-company" name="empresa" autocomplete="organization" required maxlength="160" class="mt-2 block min-h-12 w-full rounded-full border border-zinc-200 px-5 py-3" /></label>
   <label class="block text-sm font-medium" for="contact-phone">Seu WhatsApp<input id="contact-phone" name="telefone" type="tel" autocomplete="tel" required maxlength="30" class="mt-2 block min-h-12 w-full rounded-full border border-zinc-200 px-5 py-3" /></label>
+  <label class="block text-sm font-medium" for="contact-role">Seu cargo<select id="contact-role" name="cargo" required class="mt-2 block min-h-12 w-full rounded-full border border-zinc-200 px-5 py-3"><option value="">Selecione seu cargo</option><option>Síndico(a)</option><option>Gestor(a) de condomínio</option><option>Administradora de condomínios</option><option>Compras / Operações</option><option>RH</option><option>Comercial</option><option>Outro</option></select></label>
+  <label class="block text-sm font-medium" for="contact-city">Cidade<input id="contact-city" name="cidade" autocomplete="address-level2" required maxlength="100" class="mt-2 block min-h-12 w-full rounded-full border border-zinc-200 px-5 py-3" /></label>
+  <label class="block text-sm font-medium" for="contact-service">Serviço desejado<select id="contact-service" name="servico" required class="mt-2 block min-h-12 w-full rounded-full border border-zinc-200 px-5 py-3"><option value="">Selecione o serviço</option><option>Segurança para condomínio horizontal</option><option>Segurança patrimonial</option><option>Vigilância armada</option><option>Vigilância desarmada</option><option>Portaria terceirizada</option><option>Controle de acesso</option><option>Recepção</option><option>Limpeza</option><option>Monitor de postura</option><option>Preciso de orientação</option></select></label>
   <button type="submit" class="button w-full">Solicitar orçamento pelo WhatsApp</button><p class="text-center text-xs leading-relaxed text-zinc-500">Os dados serão incluídos na mensagem para você enviar pelo WhatsApp. <a href="/politica-de-privacidade/" class="underline">Política de privacidade</a>.</p>
  </form>
 </div></section>
@@ -15,7 +18,7 @@ import data from '../data/wordpress.json';
  form?.addEventListener('submit', event => {
   event.preventDefault(); if (!form.reportValidity()) return;
   const values = new FormData(form);
-  const message = `Olá! Vim do site da Multiforte e gostaria de solicitar um orçamento.\nNome: ${values.get('nome')}\nEmpresa/Condomínio: ${values.get('empresa')}\nWhatsApp: ${values.get('telefone')}`;
+  const message = `Olá! Vim do site da Multiforte e gostaria de solicitar um orçamento.\nNome: ${values.get('nome')}\nEmpresa/Condomínio: ${values.get('empresa')}\nCargo: ${values.get('cargo')}\nCidade: ${values.get('cidade')}\nServiço desejado: ${values.get('servico')}\nWhatsApp: ${values.get('telefone')}`;
   const destination = `https://wa.me/5565984027828?text=${encodeURIComponent(message)}`;
   // This measures a validated request to open WhatsApp, not a message sent or a sale.
   // Never put the form values or the destination URL (which contains them) in analytics.
